@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_cwhire</name>
+    <creationDate>2017-04-26</creationDate>
+    <copyright>Copyright (C) 2018-2022. All rights reserved.</copyright>
+    <license>GNU General Public License version 3, or later</license>
+    <author>rainer haage</author>
+    <authorEmail>mail@createweb.de</authorEmail>
+    <authorUrl>http://createweb.de</authorUrl>
+    <version>2.0.12</version>
+    <description>CW-hire listing and assignement</description>
+    <scriptfile>script.php</scriptfile>
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+      <sql>
+          <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+      </sql>
+      <schemas>
+        <schemapath type="mysql">sql/updates</schemapath>
+      </schemas>
+    </update>
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>cwhire.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>assets</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+
+    <languages folder="language/site">
+			<language tag="de-DE">de-DE/de-DE.com_cwhire.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_cwhire.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_cwhire/assets/images/s_com_jobokay.png" >COM_CWHIRE</menu>
+        <submenu>
+
+			<menu link="option=com_cwhire&amp;view=joblistings" view="joblistings" img="components/com_cwhire/assets/images/s_joblistings.png" alt="Cwhire/Joblistings">COM_CWHIRE_TITLE_JOBLISTINGS</menu>
+			<menu link="option=com_cwhire&amp;view=categories" view="categories" img="components/com_cwhire/assets/images/s_categories.png" alt="Cwhire/Joblistings">COM_CWHIRE_TITLE_CATEGORIES</menu>
+
+        </submenu>
+        <files folder="administrator">
+          <filename>access.xml</filename>
+          <filename>config.xml</filename>
+          <filename>controller.php</filename>
+          <filename>index.html</filename>
+          <filename>cwhire.php</filename>
+          <folder>assets</folder>
+          <folder>controllers</folder>
+          <folder>helpers</folder>
+          <folder>models</folder>
+          <folder>sql</folder>
+          <folder>tables</folder>
+          <folder>views</folder>
+        </files>
+        <languages folder="language/administrator">
+    			<language tag="de-DE">de-DE/de-DE.com_cwhire.ini</language>
+    			<language tag="de-DE">de-DE/de-DE.com_cwhire.sys.ini</language>
+    			<language tag="en-GB">en-GB/en-GB.com_cwhire.ini</language>
+    			<language tag="en-GB">en-GB/en-GB.com_cwhire.sys.ini</language>
+        </languages>
+    </administration>
+    <updateservers>
+    <!-- Note: No spaces or linebreaks allowed between the server tags -->
+    <server type="extension" name="CW-hire Update Site">https://createweb.de/updateserver/cw-hire</server>
+  </updateservers>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.notwebdesign.com/joomla-component-creator/ -->

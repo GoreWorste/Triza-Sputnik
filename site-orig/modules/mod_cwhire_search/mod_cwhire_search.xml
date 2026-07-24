@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+  <name>CW-hire search</name>
+  <author>createweb, rainer haage</author>
+  <version>2.0.3</version>
+  <description>CW-hire search module.</description>
+  <creationDate>2017-01-15</creationDate>
+  <copyright>Copyright (C) 2017-2021. All rights reserved.</copyright>
+  <license>GNU General Public License version 3, or later</license>
+  <files>
+    <filename>mod_cwhire_search.xml</filename>
+    <filename module="mod_cwhire_search">mod_cwhire_search.php</filename>
+    <filename>index.html</filename>
+    <filename>helper.php</filename>
+    <filename>tmpl/default.php</filename>
+    <filename>tmpl/index.html</filename>
+    <filename>models/fields/jobcategory.php</filename>
+    <filename>models/fields/joblocation.php</filename>
+  </files>
+  <languages folder="language">
+    <language tag="de-DE">de-DE.mod_cwhire_search.ini</language>
+    <language tag="en-GB">en-GB.mod_cwhire_search.ini</language>
+  </languages>
+  <config>
+    <!-- <fields name="params">
+      <fieldset name="search">
+        <field
+          name="jobcategory"
+          type="sql"
+          default="1"
+          label="COM_CWHIRE_SEARCH_LABEL"
+        query="SELECT id AS value, name AS text FROM #__cwhire_categories WHERE state = 1 order BY name" />
+        <field
+          name="joblocation"
+          type="sql"
+          default="1"
+          label="COM_CWHIRE_SEARCH_LABEL"
+          query="SELECT location AS value, location AS text FROM #__cwhire_ WHERE state = 1 ORDER BY location GROUP BY location" />
+        </fieldset>
+      </fields> -->
+    </config>
+    <updateservers>
+    <!-- Note: No spaces or linebreaks allowed between the server tags -->
+    <server type="extension" name="CW-hire Update Site">https://createweb.de/updateserver/cw-hire-search</server>
+  </updateservers>
+  </extension>

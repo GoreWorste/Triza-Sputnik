@@ -1,0 +1,18 @@
+{
+  "id": 3,
+  "source": 0,
+  "property_preprocess": false,
+  "templatename": "vacancy",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "icon": "",
+  "template_type": 0,
+  "content": "<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"ru-ru\" lang=\"ru-ru\" dir=\"ltr\">\n    <head>\n[[$head]]\n    </head>\n    <body class=\"site ru-ru ltr sticky-header layout-fluid off-canvas-menu-init [[*cssClass]]\">\n\n        <div class=\"body-wrapper\">\n            <div class=\"body-innerwrapper\">\n[[$topbarLogo]]<header id=\"sp-header\"><div class=\"container\"><div class=\"row\"><div id=\"sp-menu\" class=\"col-xs-2 col-sm-12 col-md-12\"><div class=\"sp-column \">\t\t\t<div class='sp-megamenu-wrapper'>\n[[!spMenu]]\t\t\t</div>\n\t\t</div></div></div></div></header>[[!pageTitle]][[*show_search:is=`1`:then=`[[$searchBar]]`:else=``]]<section id=\"sp-main-body\"><div class=\"container\"><div class=\"row\"><div id=\"sp-component\" class=\"col-sm-12 col-md-12\"><div class=\"sp-column tester123\"><div id=\"system-message-container\">\n\t</div>\n[[!jobDetail]]\n</div></div></div></div></section>[[$mapBlock]]<section id=\"sp-bottom\"><div class=\"container\"><div class=\"row\"><div id=\"sp-bottom1\" class=\"col-sm-6 col-md-12\"><div class=\"sp-column \"><div class=\"sp-module \"><h3 class=\"sp-module-title\">Горячие вакансии</h3><div class=\"sp-module-content\">[[!hotVacancies]]</div></div></div></div></div></div></section>[[$footer]][[$copyright]]            </div> <!-- /.body-innerwrapper -->\n        </div> <!-- /.body-wrapper -->\n[[$tail]]\n    </body>\n</html>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "preview_file": "",
+  "data": "([])"
+}

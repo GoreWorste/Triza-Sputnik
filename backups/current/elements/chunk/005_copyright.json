@@ -1,0 +1,17 @@
+{
+  "id": 5,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "copyright",
+  "description": "Chunk",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "<section id=\"sp-copyright\"><div class=\"container\"><div class=\"row\"><div id=\"sp-copyright1\" class=\"col-sm-12 col-md-12\"><div class=\"sp-column \"><span class=\"sp-copyright\"><center>ООО «ПЕРСОНА-Спутник» © <script>document.write(new Date().getFullYear())</script>. Все права защищены.</center></span></div></div></div></div></section>",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "content": "<section id=\"sp-copyright\"><div class=\"container\"><div class=\"row\"><div id=\"sp-copyright1\" class=\"col-sm-12 col-md-12\"><div class=\"sp-column \"><span class=\"sp-copyright\"><center>ООО «ПЕРСОНА-Спутник» © <script>document.write(new Date().getFullYear())</script>. Все права защищены.</center></span></div></div></div></div></section>",
+  "data": "([])"
+}

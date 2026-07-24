@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Инструкция — управление сайтом MODX</title>
+  <style>
+    @page { margin: 16mm 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "DejaVu Sans", Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      color: #222;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 10mm 8mm;
+    }
+    h1 { font-size: 22pt; color: #0285ca; margin: 0 0 8px; page-break-after: avoid; }
+    h2 { font-size: 15pt; color: #0285ca; margin: 22px 0 10px; border-bottom: 2px solid #e8f4fc; padding-bottom: 4px; page-break-after: avoid; }
+    h3 { font-size: 12pt; margin: 14px 0 8px; page-break-after: avoid; }
+    p { margin: 8px 0; }
+    ul, ol { margin: 8px 0 8px 20px; }
+    li { margin: 5px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 10pt; }
+    th, td { border: 1px solid #ccc; padding: 7px 9px; text-align: left; vertical-align: top; }
+    th { background: #f0f8ff; color: #026aa3; }
+    .cover { text-align: center; padding: 50px 20px 40px; page-break-after: always; }
+    .cover .logo { font-size: 14pt; color: #666; margin-bottom: 30px; }
+    .cover h1 { font-size: 26pt; margin-bottom: 12px; }
+    .cover .subtitle { font-size: 13pt; color: #444; margin-bottom: 40px; }
+    .cover .meta { font-size: 10pt; color: #777; margin-top: 60px; }
+    .tip { background: #f0f8ff; border-left: 4px solid #0285ca; padding: 10px 12px; margin: 12px 0; font-size: 10.5pt; }
+    .warn { background: #fff8e6; border-left: 4px solid #e6a800; padding: 10px 12px; margin: 12px 0; font-size: 10.5pt; }
+    .screenshot { margin: 12px 0 18px; text-align: center; page-break-inside: avoid; }
+    .screenshot img { max-width: 100%; border: 1px solid #ccc; border-radius: 4px; }
+    .screenshot .caption { font-size: 9.5pt; color: #555; margin-top: 6px; font-style: italic; }
+    .cheatsheet { background: #fafafa; border: 1px solid #ddd; padding: 12px 14px; border-radius: 6px; font-family: monospace; font-size: 10pt; white-space: pre-line; margin: 10px 0; }
+    .toc { page-break-after: always; }
+    .toc ul { list-style: none; margin-left: 0; }
+    .toc li { margin: 6px 0; border-bottom: 1px dotted #ddd; padding-bottom: 4px; }
+    .page-break { page-break-before: always; }
+    code { background: #f4f4f4; padding: 1px 5px; border-radius: 3px; font-size: 10pt; }
+    .arrow { color: #0285ca; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="logo">Кадровое агентство ТРИЗА-Спутник</div>
+  <h1>Инструкция по работе<br>с админ-панелью сайта</h1>
+  <div class="subtitle">Как добавлять вакансии и новости<br><strong>Сайт:</strong> modx.romanovivv.ru</div>
+  <div class="meta">Пошаговая инструкция с фотографиями экрана<br>для сотрудников без технической подготовки</div>
+</div>
+
+<div class="toc">
+  <h2>Содержание</h2>
+  <ul>
+    <li>1. Вход в админку</li>
+    <li>2. Обзор панели управления</li>
+    <li>3. Как добавить вакансию (пошагово)</li>
+    <li>4. Дополнительные поля вакансии</li>
+    <li>5. Как изменить или убрать вакансию</li>
+    <li>6. Как добавить новость (пошагово)</li>
+    <li>7. Горячие вакансии на главной</li>
+    <li>8. Частые ошибки и шпаргалка</li>
+  </ul>
+</div>
+
+<h2>1. Вход в админку</h2>
+<ol>
+  <li>Откройте браузер (Chrome, Firefox или Edge).</li>
+  <li>Введите адрес: <strong>https://modx.romanovivv.ru/manager/</strong></li>
+  <li>Введите <strong>логин</strong> и <strong>пароль</strong> (выдаёт разработчик).</li>
+  <li>Нажмите <strong>«Войти»</strong>.</li>
+</ol>
+<div class="screenshot">
+  <img src="img-login.png" alt="Вход в админку">
+  <div class="caption">Рис. 1 — Страница входа в панель управления</div>
+</div>
+
+<h2>2. Обзор панели управления</h2>
+<p>После входа откроется <strong>панель управления</strong>. Слева — дерево страниц сайта, справа — рабочая область.</p>
+<ul>
+  <li><strong>Слева</strong> — вкладка «Ресурсы»: здесь все страницы и материалы сайта.</li>
+  <li><strong>Справа</strong> — панель с кнопками и виджетами.</li>
+  <li><strong>Вверху справа</strong> — зелёная кнопка <strong>«Сохранить»</strong> (появляется при редактировании).</li>
+</ul>
+<div class="screenshot">
+  <img src="img/01-dashboard-vakansii.png" alt="Панель управления">
+  <div class="caption">Рис. 2 — Панель управления. Слева видна папка «Вакансии»</div>
+</div>
+<div class="tip">Все вакансии хранятся в папке <strong>«Вакансии»</strong>, все новости — в папке <strong>«Лента новостей»</strong>.</div>
+
+<h2 class="page-break">3. Как добавить вакансию (пошагово)</h2>
+
+<h3>Шаг 1. Наведите на папку «Вакансии»</h3>
+<p>В дереве слева найдите папку <strong>«Вакансии»</strong>. Наведите на неё мышку — справа от названия появится <strong>зелёный плюс (+)</strong>.</p>
+<div class="screenshot">
+  <img src="img/01-dashboard-vakansii.png" alt="Зелёный плюс у папки Вакансии">
+  <div class="caption">Рис. 3 — Наведите на «Вакансии» и нажмите зелёный «+». Подсказка: «Создать документ здесь: Вакансии»</div>
+</div>
+
+<h3>Шаг 2. Заполните окно «Создать документ»</h3>
+<p>Откроется окно. Заполните:</p>
+<table>
+  <tr><th>Поле</th><th>Что писать</th></tr>
+  <tr><td><strong>Заголовок</strong></td><td>Название вакансии, например: «Менеджер по продажам»</td></tr>
+  <tr><td><strong>Тип ресурса</strong></td><td>Оставьте «Документ»</td></tr>
+  <tr><td><strong>Родительский ресурс</strong></td><td>Должно быть <strong>104</strong> (Вакансии) — подставится автоматически</td></tr>
+  <tr><td><strong>Шаблон</strong></td><td>Можно оставить «base» — шаблон вакансии подставится сам при сохранении</td></tr>
+</table>
+<p>Нажмите зелёную кнопку <strong>«Сохранить»</strong> внизу окна.</p>
+<div class="screenshot">
+  <img src="img/02-sozdat-dokument.png" alt="Окно создать документ">
+  <div class="caption">Рис. 4 — Окно «Создать документ»: введите заголовок и нажмите «Сохранить»</div>
+</div>
+
+<h3>Шаг 3. Заполните основные поля</h3>
+<p>Откроется редактор вакансии. На вкладке <strong>«Документ»</strong> заполните:</p>
+<ul>
+  <li><strong>Заголовок</strong> — название вакансии (уже заполнен).</li>
+  <li><strong>Псевдоним</strong> — адрес страницы (можно не трогать).</li>
+  <li><strong>Содержимое</strong> — при необходимости дополнительный текст (основные данные — в доп. полях, см. раздел 4).</li>
+</ul>
+<p>Справа проверьте:</p>
+<ul>
+  <li>Переключатель <strong>«Опубликован»</strong> — должен быть <span class="arrow">зелёным (включён)</span>.</li>
+  <li>Если страница не должна быть в меню — включите <strong>«Скрыть из меню»</strong>.</li>
+</ul>
+<div class="screenshot">
+  <img src="img/03-redaktor-vakansii.png" alt="Редактор вакансии">
+  <div class="caption">Рис. 5 — Редактор вакансии: вкладка «Документ», справа — «Опубликован»</div>
+</div>
+
+<h3>Шаг 4. Сохраните</h3>
+<p>Нажмите зелёную кнопку <strong>«Сохранить»</strong> вверху справа. Внизу появится сообщение <strong>«Успешно сохранено»</strong>.</p>
+<div class="screenshot">
+  <img src="img/04-sohraneno.png" alt="Успешно сохранено">
+  <div class="caption">Рис. 6 — После сохранения появляется зелёное сообщение «Успешно сохранено»</div>
+</div>
+
+<h3>Шаг 5. Проверьте на сайте</h3>
+<p>Откройте на сайте раздел <strong>https://modx.romanovivv.ru/vacancy</strong> — ваша вакансия должна появиться в списке (новые — сверху).</p>
+<p>Можно нажать кнопку <strong>«Просмотреть»</strong> в админке — откроется страница вакансии на сайте.</p>
+<div class="screenshot">
+  <img src="img/05-vakansiya-na-saite.png" alt="Вакансия на сайте">
+  <div class="caption">Рис. 7 — Вакансия в списке на сайте (город, тип занятости, дата начала)</div>
+</div>
+
+<h2 class="page-break">4. Дополнительные поля вакансии</h2>
+<p>Чтобы вакансия отображалась правильно (город, зарплата, требования), перейдите на вкладку <strong>«Дополнительные поля (TV)»</strong> и заполните:</p>
+<table>
+  <tr><th>Поле</th><th>Что указать</th></tr>
+  <tr><td>Город</td><td>Город работы, например: Зеленоград</td></tr>
+  <tr><td>Категория</td><td>Выберите из списка (Продажи, IT, Производство…)</td></tr>
+  <tr><td>Тип занятости</td><td>Полный день / Вахта / Сменный график</td></tr>
+  <tr><td>Дата начала</td><td>Ближайшее время или конкретная дата</td></tr>
+  <tr><td>Заработная плата</td><td>Текст про зарплату</td></tr>
+  <tr><td>Требования к кандидату</td><td>Что должен уметь кандидат</td></tr>
+  <tr><td>Характер выполняемой работы</td><td>Чем будет заниматься</td></tr>
+  <tr><td>Условия работы</td><td>График, соцпакет</td></tr>
+  <tr><td>Контакты</td><td>Телефон, e-mail (необязательно)</td></tr>
+  <tr><td>Показывать в «Горячие вакансии»</td><td>Галочка — вакансия на главной (до 4 штук)</td></tr>
+</table>
+<div class="screenshot">
+  <img src="img/06-dop-polya-vakansii.png" alt="Дополнительные поля вакансии">
+  <div class="caption">Рис. 8 — Вкладка «Дополнительные поля (TV)»: город, категория, зарплата и др.</div>
+</div>
+<p>После заполнения снова нажмите <strong>«Сохранить»</strong>.</p>
+
+<h2>5. Как изменить или убрать вакансию</h2>
+
+<h3>Изменить</h3>
+<ol>
+  <li>В дереве слева откройте <strong>«Вакансии»</strong>.</li>
+  <li>Щёлкните по нужной вакансии в списке.</li>
+  <li>Измените поля на вкладках «Документ» и «Дополнительные поля».</li>
+  <li>Нажмите <strong>«Сохранить»</strong>.</li>
+</ol>
+
+<h3>Убрать с сайта (не удаляя)</h3>
+<ol>
+  <li>Откройте вакансию.</li>
+  <li>Справа выключите переключатель <strong>«Опубликован»</strong> (станет серым).</li>
+  <li>Нажмите <strong>«Сохранить»</strong>.</li>
+</ol>
+<div class="tip">Чтобы перенести в архив: в поле «Родительский ресурс» выберите <strong>«Архив вакансий»</strong> и снимите публикацию.</div>
+
+<h2 class="page-break">6. Как добавить новость (пошагово)</h2>
+
+<h3>Шаг 1. Создайте документ в «Ленте новостей»</h3>
+<p>В дереве слева найдите папку <strong>«Лента новостей»</strong>. Наведите мышку и нажмите <strong>зелёный «+»</strong> (как для вакансий).</p>
+<div class="screenshot">
+  <img src="img/12-sozdat-novost.png" alt="Создать новость">
+  <div class="caption">Рис. 9 — Создание новости: родительский ресурс должен быть «Лента новостей» (105)</div>
+</div>
+<p>В окне «Создать документ»:</p>
+<ul>
+  <li><strong>Заголовок</strong> — короткое название новости.</li>
+  <li><strong>Родительский ресурс</strong> — должен быть <strong>105</strong> (Лента новостей).</li>
+  <li>Нажмите <strong>«Сохранить»</strong>.</li>
+</ul>
+
+<h3>Шаг 2. Заполните текст новости</h3>
+<p>На вкладке <strong>«Документ»</strong>:</p>
+<table>
+  <tr><th>Поле</th><th>Что писать</th></tr>
+  <tr><td><strong>Заголовок</strong></td><td>Короткое название</td></tr>
+  <tr><td><strong>Аннотация</strong></td><td><strong>Полный заголовок</strong> для списка новостей (если заголовок длинный — пишите сюда)</td></tr>
+  <tr><td><strong>Содержимое</strong></td><td>Полный текст новости</td></tr>
+</table>
+<p>Справа включите <strong>«Опубликован»</strong> и нажмите <strong>«Сохранить»</strong>.</p>
+<div class="screenshot">
+  <img src="img/07-redaktor-novosti.png" alt="Редактор новости">
+  <div class="caption">Рис. 10 — Редактор новости: заголовок, аннотация, содержимое</div>
+</div>
+<div class="screenshot">
+  <img src="img/10-novost-soderzhimoe.png" alt="Текст новости">
+  <div class="caption">Рис. 11 — Пример заполненного поля «Содержимое»</div>
+</div>
+<div class="screenshot">
+  <img src="img/09-novost-sohranena.png" alt="Новость сохранена">
+  <div class="caption">Рис. 12 — Сообщение «Успешно сохранено»</div>
+</div>
+
+<h3>Шаг 3. Проверьте на сайте</h3>
+<p>Откройте <strong>https://modx.romanovivv.ru/blog</strong> — новость должна быть в списке (новые — сверху).</p>
+<div class="screenshot">
+  <img src="img/08-lenta-na-saite.png" alt="Лента новостей на сайте">
+  <div class="caption">Рис. 13 — Лента новостей на сайте</div>
+</div>
+<p>Нажмите на заголовок — откроется полный текст новости:</p>
+<div class="screenshot">
+  <img src="img/11-novost-na-saite.png" alt="Страница новости">
+  <div class="caption">Рис. 14 — Страница новости на сайте</div>
+</div>
+
+<h2>7. Горячие вакансии на главной</h2>
+<p>На главной странице внизу блок <strong>«Горячие вакансии»</strong> — показывается до <strong>4 вакансий</strong>.</p>
+<ol>
+  <li>Откройте вакансию в админке.</li>
+  <li>Вкладка <strong>«Дополнительные поля (TV)»</strong>.</li>
+  <li>Поставьте галочку <strong>«Показывать в „Горячие вакансии" на главной»</strong>.</li>
+  <li>Сохраните.</li>
+</ol>
+
+<h2 class="page-break">8. Частые ошибки и шпаргалка</h2>
+
+<table>
+  <tr><th>Проблема</th><th>Что сделать</th></tr>
+  <tr><td>Вакансии нет на сайте</td><td>Включите «Опубликован» (зелёный переключатель справа) и сохраните</td></tr>
+  <tr><td>Вакансии нет на сайте</td><td>Проверьте, что она в папке «Вакансии», а не в другом разделе</td></tr>
+  <tr><td>Нет города/зарплаты на сайте</td><td>Заполните вкладку «Дополнительные поля (TV)»</td></tr>
+  <tr><td>Короткий заголовок в ленте новостей</td><td>Заполните поле «Аннотация» полным заголовком</td></tr>
+  <tr><td>Изменения не видны</td><td>Нажмите «Сохранить» и обновите сайт (Ctrl+F5)</td></tr>
+</table>
+
+<div class="warn"><strong>Не трогайте:</strong> разделы «Элементы», «Пакеты», «Система»; текст <code>[[!jobList]]</code> и <code>[[!newsList]]</code> на страницах — это служебный код.</div>
+
+<h3>Шпаргалка</h3>
+<p><strong>Новая вакансия:</strong></p>
+<div class="cheatsheet">Вакансии → зелёный «+» → Заголовок → Сохранить →
+Дополнительные поля (город, категория, зарплата…) → Опубликован ✅ → Сохранить</div>
+
+<p><strong>Новая новость:</strong></p>
+<div class="cheatsheet">Лента новостей → зелёный «+» → Заголовок → Сохранить →
+Аннотация + Содержимое → Опубликован ✅ → Сохранить</div>
+
+<p><strong>Убрать с сайта:</strong></p>
+<div class="cheatsheet">Открыть материал → Опубликован ❌ (выключить) → Сохранить</div>
+
+<div class="tip" style="margin-top:24px">
+  <strong>Нужна помощь?</strong> Сделайте скриншот экрана и опишите, что делали. Не удаляйте папки «Вакансии» и «Лента новостей».
+</div>
+
+<p style="text-align:center; color:#888; font-size:9pt; margin-top:36px;">
+  Инструкция для сайта modx.romanovivv.ru · Кадровое агентство ТРИЗА-Спутник · 2026
+</p>
+
+</body>
+</html>

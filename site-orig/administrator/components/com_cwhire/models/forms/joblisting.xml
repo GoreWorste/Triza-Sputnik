@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="config" label="COM_CWHIRE_FORM_LBL_JOBLISTING_CONFIG">
+
+		<field name="id" type="text" default="0" label="COM_CWHIRE_FORM_LBL_JOBLISTING_ID" readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" />
+
+		<field
+	    name="homepage"
+	    type="radio"
+	    label="COM_CWHIRE_FORM_LBL_JOBLISTING_HOMEPAGE"
+	    description="COM_CWHIRE_FORM_DESC_JOBLISTING_HOMEPAGE"
+	    class="btn-group btn-group-yesno radio"
+	    size="1"
+	    default="0">
+	    <option value="1">JYES</option>
+	    <option value="0">JNO</option>
+	  </field>
+
+		<field name="jobcategory" type="sql" default="" query="SELECT id AS value, name AS jobcategory FROM #__cwhire_categories"
+			label="COM_CWHIRE_FORM_LBL_JOBLISTING_CATEGORY"
+			description="COM_CWHIRE_FORM_DESC_JOBLISTING_CATEGORY"
+			required="true"
+			filter="raw"
+			multiple="false" />
+
+		<field name="refname" type="text"
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_REFNAME"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_REFNAME"
+		    required="true"
+		    filter="raw" />
+
+		<field name="title" type="text"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_TITLE"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_TITLE"
+		    required="true"
+		    filter="raw"
+				size="80"
+		class="titlefield" />
+
+		<field name="location" type="text"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_LOCATION"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_LOCATION"
+
+
+		         required="true"
+		    filter="raw" />
+
+		<!-- <field name="contract" type="list"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_CONTRACT"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_CONTRACT"
+
+
+		         required="true"
+		    filter="raw"
+		    multiple="false">
+		        <option value="Festanstellung">Festanstellung</option>
+		        <option value="Arbeitnehmerüberlassung">Arbeitnehmerüberlassung</option>
+		        <option value="Contracting">Contracting</option>
+		</field> -->
+
+		<field name="contract" type="ContractForms"
+				label="COM_CWHIRE_FORM_LBL_JOBLISTING_CONTRACT"
+				description="COM_CWHIRE_FORM_DESC_JOBLISTING_CONTRACT"
+				required="true"
+				filter="raw"
+				multiple="false">
+		</field>
+
+		<field name="start_date" type="calendar"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_START_DATE"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_START_DATE"
+		    required="false"
+				default="1970-01-01"
+		    filter="raw" />
+
+		<field
+			name="language"
+			type="contentlanguage"
+			label="JFIELD_LANGUAGE_LABEL"
+			description="COM_CONTACT_FIELD_LANGUAGE_DESC"
+			>
+			<option value="*">JALL</option>
+		</field>
+
+	</fieldset>
+	<fieldset name="contents" label="COM_CWHIRE_FORM_LBL_JOBLISTING_CONTENT">
+		<field name="shortdesc" type="text"
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_SHORTDESC"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_SHORTDESC"
+		    required="false"
+		    filter="raw"
+		class="longtext" />
+
+		<field name="image" type="media"
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_IMAGE"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_IMAGE"
+		    directory="jobs" />
+
+		<field name="description" type="editor"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_DESCRIPTION"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_DESCRIPTION"
+		    required="true"
+		    cols="70"
+		    height="250"
+		    filter="raw" />
+
+		<field name="tasks" type="editor"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_TASKS"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_TASKS"
+		  	required="true"
+		    cols="70"
+		    height="250"
+		    filter="raw" />
+
+		<field name="profile" type="editor"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_PROFILE"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_PROFILE"
+		    required="true"
+		    cols="70"
+		    height="250"
+		    filter="raw" />
+
+		<field name="perspective" type="editor"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_PERSPECTIVE"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_PERSPECTIVE"
+		    cols="70"
+		    height="250"
+		    filter="raw" />
+
+		<field name="contactinfo" type="editor"
+
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_CONTACTINFO"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_CONTACTINFO"
+		    required="false"
+		    cols="70"
+		    height="250"
+		    filter="raw" />
+
+		<field name="created_by" type="createdby" default=""
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_CREATED_BY"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_CREATED_BY"  />
+
+		<field name="created" type="timecreated" default=""
+		    label="COM_CWHIRE_FORM_LBL_JOBLISTING_CREATED"
+		    description="COM_CWHIRE_FORM_DESC_JOBLISTING_CREATED"  readonly="true" />
+
+    <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field>
+
+    <field name="checked_out" type="hidden" filter="unset" />
+    <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+	<!-- <fields>
+		<field name="introtext" label="COM_CONTENT_FIELD_INTROTEXT" />
+		<field name="fulltext" label="COM_CONTENT_FIELD_FULLTEXT" />
+	</fields> -->
+</form>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+  <name>CW-hire latest</name>
+  <author>createweb, rainer haage</author>
+  <version>2.0.5</version>
+  <description>CW-hire latest entries module.</description>
+  <creationDate>2017-01-15</creationDate>
+  <copyright>Copyright (C) 2017-2021. All rights reserved.</copyright>
+  <license>GNU General Public License version 3, or later</license>
+  <files>
+    <filename>mod_cwhire_latest.xml</filename>
+    <filename module="mod_cwhire_latest">mod_cwhire_latest.php</filename>
+    <filename>index.html</filename>
+    <filename>helper.php</filename>
+    <filename>tmpl/default.php</filename>
+    <filename>tmpl/index.html</filename>
+    <folder>tmpl</folder>
+    <folder>assets</folder>
+  </files>
+  <languages folder="language">
+    <language tag="de-DE">de-DE.mod_cwhire_latest.ini</language>
+    <language tag="en-GB">en-GB.mod_cwhire_latest.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="Basic" label="MOD_CWHIRE_LATEST_LABEL_SETTINGS">
+          <field name="list_limit" type="text" default="4"
+          label="MOD_CWHIRE_LATEST_LABEL_LISTLIMIT" description="MOD_CWHIRE_LATEST_DESC_LISTLIMIT" />
+          <field name="char_limit" type="text" default="0"
+          label="MOD_CWHIRE_LATEST_LABEL_CHARLIMIT" description="MOD_CWHIRE_LATEST_DESC_CHARLIMIT" />
+          <field name="com_jobok_categories" size="350" class="inputbox span6" type="sql" default="0" label="Job categories" query="SELECT id AS value, name AS com_jobok_categories FROM #__cwhire_categories" multiple="multiple">
+            <option value="0">Show All</option>
+          </field>
+          <field name="usecss" type="radio" default="1" label="MOD_CWHIRE_LATEST_LABEL_USECSS" description="MOD_CWHIRE_LATEST_DESC_USECSS"
+          class="btn-group btn-group-yesno radio">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+          <field name="show_moreoffers" type="radio" default="1" label="MOD_CWHIRE_LATEST_LABEL_SHOW_MOREOFFERS" description="MOD_CWHIRE_LATEST_DESC_SHOW_MOREOFFERS"
+          class="btn-group btn-group-yesno radio">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+          </field>
+        </fieldset>
+        <fieldset name="advanced">
+        <field
+            name="layout"
+            type="modulelayout"
+            label="JFIELD_ALT_LAYOUT_LABEL"
+            description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+        <field name="columns" type="list" default="1" label="MOD_CWHIRE_LATEST_LABEL_COLUMNS" description="MOD_CWHIRE_LATEST_DESC_COLUMNS"
+        class="" showon="layout:_:responsive">
+          <option value="">1</option>
+          <option value="col-sm-6">2</option>
+          <option value="col-sm-4">3</option>
+          <option value="col-sm-3">4</option>
+        </field>
+
+        <field
+            name="moduleclass_sfx"
+            type="text"
+            label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+            description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+        </fieldset>
+      </fields>
+    </config>
+    <updateservers>
+      <server type="extension" name="CW-hire Update Site">https://createweb.de/updateserver/cw-hire-latest</server>
+  </updateservers>
+  </extension>

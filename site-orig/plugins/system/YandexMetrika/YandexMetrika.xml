@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="system" method="update">
+  <name>System - Yandex Metrika</name>
+  <author>Nikita Zonov</author>
+  <creationDate>March 2012</creationDate>
+  <authorEmail>info@joomalungma.com</authorEmail>
+  <authorUrl>http://joomalungma.com</authorUrl>
+  <version>1.1.3</version>
+  <copyright>Copyright (c) 2012 Joomalungma. All rights reserved.</copyright>
+  <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+  <description>PLG_YANDEXMETRIKA_XML_DESCRIPTION</description>
+  <files>
+    <filename plugin="YandexMetrika">YandexMetrika.php</filename>
+    <filename>index.html</filename>
+	<folder>language</folder>
+  </files>
+  <config>
+    <fields name="params" >
+      <fieldset name="Basic">
+        <field name="id" type="text" default="XXXXXXXXXX" label="PLG_SYS_YM_ID" description="PLG_SYS_YM_ID_DESC"></field>
+          <field name="noindexWrapper" type="radio" default="1" label="PLG_SYS_YM_NOINDEX_WRAPPER" description="PLG_SYS_YM_NOINDEX_WRAPPER_DESC">
+              <option value="0">JNo</option>
+              <option value="1">JYes</option>
+          </field>
+      </fieldset>
+      <fieldset name="Advanced">
+	  <field name="webvisor" type="radio" default="1" label="PLG_SYS_YM_WEBVISOR" description="PLG_SYS_YM_WEBVISOR_DESC">
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field>
+		<field name="clickMap" type="radio" default="1" label="PLG_SYS_YM_CLICKMAP" description="PLG_SYS_YM_CLICKMAP_DESC">
+			<option value="0">JNo</option>
+			<option value="1">JYes</option>
+		</field>
+        <field name="linksOut" type="radio" default="1" label="PLG_SYS_YM_OUTLINKS" description="PLG_SYS_YM_OUTLINKS_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+        <field name="accurateTrackBounce" type="radio" default="1" label="PLG_SYS_YM_BOUNCE" description="PLG_SYS_YM_BOUNCE_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+        <field name="noIndex" type="radio" default="0" label="PLG_SYS_YM_NOINDEX" description="PLG_SYS_YM_NOINDEX_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+		</fieldset>
+    </fields>
+  </config>
+    <updateservers>
+        <server type="extension" priority="1" name="YandexMetrica"><![CDATA[http://joomalungma.com/updatexml/YandexMetrica-update.xml]]></server>
+    </updateservers>
+</extension>

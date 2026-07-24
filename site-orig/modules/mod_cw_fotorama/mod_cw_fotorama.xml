@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+  <name>CW-fotorama</name>
+  <author>createweb, rainer haage</author>
+  <creationDate>July 2017</creationDate>
+  <copyright>(C) 2017-2021 createweb - rainer haage. All rights reserved.</copyright>
+  <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+  <authorEmail>mail@createweb.de</authorEmail>
+  <authorUrl>www.createweb.de</authorUrl>
+  <version>1.0.1</version>
+  <description>CW-fotorama</description>
+  <files>
+    <filename>mod_cw_fotorama.xml</filename>
+    <filename module="mod_cw_fotorama">mod_cw_fotorama.php</filename>
+    <filename>index.html</filename>
+    <filename>tmpl/default.php</filename>
+    <filename>tmpl/index.html</filename>
+    <folder>assets</folder>
+  </files>
+  <languages folder="site">
+    <language tag="de-DE">language/de-DE.mod_cw_fotorama.ini</language>
+    <language tag="en-GB">language/en-GB.mod_cw_fotorama.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="usecss" type="radio" default="1" label="MOD_CW_FOTORAMA_USECSS" description="MOD_CW_FOTORAMA_USECSS_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="usejs" type="radio" default="1" label="MOD_CW_FOTORAMA_USEJS" description="MOD_CW_FOTORAMA_USEJS_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="load_jquery" type="radio" default="0" label="MOD_CW_FOTORAMA_LOADJQ" description="MOD_CW_FOTORAMA_LOADJQ_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+      </fieldset>
+      <fieldset name="advanced">
+        <field
+            name="moduleclass_sfx"
+            type="text"
+            label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+            description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+      </fieldset>
+      <fieldset name="Fotorama" label="Fotorama parameters">
+        <field type="spacer" name="dimensions_spacer" label="MOD_CW_FOTORAMA_DATA_DIMENSIONS" hr="false" />
+        <field name="data_width" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_WIDTH" description="MOD_CW_FOTORAMA_DATA_WIDTH_DESC" />
+        <field name="data_minwidth" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_MINWIDTH" description="MOD_CW_FOTORAMA_DATA_MINWIDTH_DESC" />
+        <field name="data_maxwidth" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_MAXWIDTH" description="MOD_CW_FOTORAMA_DATA_MAXWIDTH_DESC" />
+
+        <field name="data_height" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_HEIGHT" description="MOD_CW_FOTORAMA_DATA_HEIGHT_DESC" />
+        <field name="data_minheight" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_MINHEIGHT" description="MOD_CW_FOTORAMA_DATA_MINHEIGHT_DESC" />
+        <field name="data_maxheight" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_MAXHEIGHT" description="MOD_CW_FOTORAMA_DATA_MAXHEIGHT_DESC" />
+        <field name="data_ratio" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_RATIO" description="MOD_CW_FOTORAMA_DATA_RATIO_DESC" />
+        <field name="data_fit" type="list" default="contain" label="MOD_CW_FOTORAMA_DATA_FIT" description="MOD_CW_FOTORAMA_DATA_FIT_DESC">
+          <option value="contain">MOD_CW_FOTORAMA_DATA_FIT_CONTAIN</option>
+          <option value="cover">MOD_CW_FOTORAMA_DATA_FIT_COVER</option>
+          <option value="scaledown">MOD_CW_FOTORAMA_DATA_FIT_SCALEDOWN</option>
+          <option value="none">MOD_CW_FOTORAMA_DATA_FIT_NONE</option>
+        </field>
+        <field name="data_margin" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_MARGIN" description="MOD_CW_FOTORAMA_DATA_MARGIN_DESC" />
+        <field name="data_glimpse" type="text" default=""
+        label="MOD_CW_FOTORAMA_DATA_GLIMPSE" description="MOD_CW_FOTORAMA_DATA_GLIMPSE_DESC" />
+
+        <field type="spacer" name="player_spacer" label="MOD_CW_FOTORAMA_DATA_PLAYER" hr="false" />
+        <field name="data_startindex" type="text" default="0"
+        label="MOD_CW_FOTORAMA_DATA_START" description="MOD_CW_FOTORAMA_DATA_START_DESC" />
+        <field name="data_transitionduration" type="text" default="800"
+        label="MOD_CW_FOTORAMA_DATA_TRANSITION_DURATION" description="MOD_CW_FOTORAMA_DATA_TRANSITION_DURATION_DESC" />
+        <field name="data_transition" type="list" default="" label="MOD_CW_FOTORAMA_DATA_TRANSITION" description="MOD_CW_FOTORAMA_DATA_TRANSITION_DESC">
+          <option value="slide">MOD_CW_FOTORAMA_DATA_TRANSITION_SLIDE</option>
+          <option value="crossfade">MOD_CW_FOTORAMA_DATA_TRANSITION_CROSS</option>
+          <option value="dissolve">MOD_CW_FOTORAMA_DATA_TRANSITION_DISSOLVE</option>
+        </field>
+        <field name="data_autoplay" type="radio" default="1" label="MOD_CW_FOTORAMA_DATA_AUTOPLAY" description="MOD_CW_FOTORAMA_DATA_AUTOPLAY_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_autoplay_time" type="text" default="5000" showon="data_autoplay:1"
+        label="MOD_CW_FOTORAMA_DATA_AUTOPLAY_TIME" description="MOD_CW_FOTORAMA_DATA_AUTOPLAY_TIME_DESC" />
+        <field name="data_stopautoplayontouch" type="radio" default="0" label="MOD_CW_FOTORAMA_DATA_STOPAUTOPLAY" description="MOD_CW_FOTORAMA_DATA_STOPAUTOPLAY_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_loop" type="radio" default="0" label="MOD_CW_FOTORAMA_DATA_LOOP" description="MOD_CW_FOTORAMA_DATA_LOOP_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_shuffle" type="radio" default="0" label="MOD_CW_FOTORAMA_DATA_SHUFFLE" description="MOD_CW_FOTORAMA_DATA_SHUFFLE_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_direction" type="list" default="ltr" showon="data_nav!:false" label="MOD_CW_FOTORAMA_DATA_DIRECTION" description="MOD_CW_FOTORAMA_DATA_DIRECTION_DESC">
+          <option value="ltr">MOD_CW_FOTORAMA_DATA_LTR</option>
+          <option value="rtl">MOD_CW_FOTORAMA_DATA_RTL</option>
+        </field>
+        <field name="data_lazyload" type="radio" default="0" label="MOD_CW_FOTORAMA_DATA_LAZYLOAD" description="MOD_CW_FOTORAMA_DATA_LAZYLOAD_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field type="spacer" name="nav_spacer" label="MOD_CW_FOTORAMA_DATA_NAVIGATION" hr="false" />
+        <field name="data_nav" type="list" default="dots" label="MOD_CW_FOTORAMA_DATA_NAV" description="MOD_CW_FOTORAMA_DATA_NAV_DESC">
+          <option value="dots">MOD_CW_FOTORAMA_DATA_DOTS</option>
+          <option value="thumbs">MOD_CW_FOTORAMA_DATA_THUMBS</option>
+          <option value="false">MOD_CW_FOTORAMA_DATA_NONE</option>
+        </field>
+        <field name="data_navposition" type="list" default="bottom" showon="data_nav!:false" label="MOD_CW_FOTORAMA_DATA_NAVPOS" description="MOD_CW_FOTORAMA_DATA_NAVPOS_DESC">
+          <option value="bottom">MOD_CW_FOTORAMA_DATA_BOTTOM</option>
+          <option value="top">MOD_CW_FOTORAMA_DATA_TOP</option>
+        </field>
+        <field name="data_navwidth" type="text" default="" showon="data_nav!:false"
+        label="MOD_CW_FOTORAMA_DATA_NAVWIDTH" description="MOD_CW_FOTORAMA_DATA_NAVWIDTH_DESC" />
+        <field name="data_thumbwidth" type="text" default="" showon="data_nav:thumbs"
+        label="MOD_CW_FOTORAMA_DATA_THUMBWIDTH" description="MOD_CW_FOTORAMA_DATA_THUMBWIDTH_DESC" />
+        <field name="data_thumbheight" type="text" default=""  showon="data_nav:thumbs"
+        label="MOD_CW_FOTORAMA_DATA_THUMBHEIGHT" description="MOD_CW_FOTORAMA_DATA_THUMBHEIGHT_DESC" />
+        <field name="data_thumbmargin" type="text" default="" showon="data_nav:thumbs"
+        label="MOD_CW_FOTORAMA_DATA_THUMBMARGIN" description="MOD_CW_FOTORAMA_DATA_THUMBMARGIN_DESC" />
+        <field name="data_thumbborderwidth" type="text" default="" showon="data_nav:thumbs"
+        label="MOD_CW_FOTORAMA_DATA_THUMBBORDERWIDTH" description="MOD_CW_FOTORAMA_DATA_THUMBBORDERWIDTH_DESC" />
+        <field name="data_thumbfit" type="list" default="cover" showon="data_nav:thumbs" label="MOD_CW_FOTORAMA_DATA_THUMBFIT" description="MOD_CW_FOTORAMA_DATA_FIT_DESC">
+          <option value="contain">MOD_CW_FOTORAMA_DATA_FIT_CONTAIN</option>
+          <option value="cover">MOD_CW_FOTORAMA_DATA_FIT_COVER</option>
+          <option value="scaledown">MOD_CW_FOTORAMA_DATA_FIT_SCALEDOWN</option>
+          <option value="none">MOD_CW_FOTORAMA_DATA_FIT_NONE</option>
+        </field>
+        <field name="data_arrows" type="radio" default="1" label="MOD_CW_FOTORAMA_DATA_ARROWS" description="MOD_CW_FOTORAMA_DATA_ARROWS_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_click" type="radio" default="1" label="MOD_CW_FOTORAMA_DATA_CLICK" description="MOD_CW_FOTORAMA_DATA_CLICK_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_swipe" type="radio" default="1" label="MOD_CW_FOTORAMA_DATA_SWIPE" description="MOD_CW_FOTORAMA_DATA_SWIPE_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_trackpad" type="radio" default="1" label="MOD_CW_FOTORAMA_DATA_TRACKPAD" description="MOD_CW_FOTORAMA_DATA_TRACKPAD_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_keyboard" type="radio" default="0" label="MOD_CW_FOTORAMA_DATA_KEYBOARD" description="MOD_CW_FOTORAMA_DATA_KEYBOARD_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="data_allowfullscreen" type="radio" default="1" label="MOD_CW_FOTORAMA_DATA_FULLSCREEN" description="MOD_CW_FOTORAMA_DATA_FULLSCREEN_DESC"
+        class="btn-group btn-group-yesno radio">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+      </fieldset>
+      <fieldset name="Images" label="MOD_CW_FOTORAMA_IMAGES" addfieldpath="modules/mod_cw_fotorama/forms">
+        <field name="image_source" type="list" default="somedir" label="MOD_CW_FOTORAMA_IMAGESOURCE" description="MOD_CW_FOTORAMA_IMAGESOURCE_DESC">
+          <option value="somedir">MOD_CW_FOTORAMA_SOMEDIR</option>
+          <option value="cfield">MOD_CW_FOTORAMA_CFIELD</option>
+          <option value="images">MOD_CW_FOTORAMA_IMAGE_MANAGER</option>
+        </field>
+        <field type="spacer" name="image_spacer" label="MOD_CW_FOTORAMA_IMAGES_SELECT" description="MOD_CW_FOTORAMA_IMAGES_SELECT_DESC" hr="false" showon="image_source:images" />
+        <field type="spacer" name="somedir_spacer" label="MOD_CW_FOTORAMA_FOLDERS" description="MOD_CW_FOTORAMA_FOLDERS_DESC" hr="false" showon="image_source:somedir" />
+        <field type="spacer" name="field_spacer" label="" description="" hr="false" showon="image_source:cfield" />
+        <field type="spacer" name="field_class" label="MOD_CW_FOTORAMA_FIELDCLASSPLG" description="MOD_CW_FOTORAMA_FIELDCLASSPLG_DESC" hr="false" showon="image_source:cfield" />
+        <field name="image_folder" type="folderlist" default="" label="MOD_CW_FOTORAMA_FOLDERS_SELECT" description="MOD_CW_FOTORAMA_FOLDERS_SELECT_DESC" directory="images" filter="" exclude="" stripext="" multiple="true" showon="image_source:somedir" />
+      </fieldset>
+      <fieldset name="Image_manager" label="Image manager" hidden="true">
+      </fieldset>
+    </fields>
+  </config>
+  <updateservers>
+    <!-- Note: No spaces or linebreaks allowed between the server tags -->
+    <server type="extension" name="CW-fotorama Update Site">https://createweb.de/updateserver/cw-fotorama</server>
+  </updateservers>
+</extension>

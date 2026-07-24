@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_CWHIRE_TITLE_LIST_VIEW_JOBLISTINGS" option="View">
+        <message>
+                        <![CDATA[COM_CWHIRE_TITLE_LIST_VIEW_JOBLISTINGS_DESC]]>
+        </message>
+	</layout>
+</metadata>

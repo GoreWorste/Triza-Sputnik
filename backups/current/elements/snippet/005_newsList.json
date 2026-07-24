@@ -1,0 +1,18 @@
+{
+  "id": 5,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "newsList",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "/**\n * newsList — \"Лента новостей\": all news on one page (no pagination).\n */\n$parent = isset($parent) ? (int)$parent : ($modx->resource ? (int)$modx->resource->get('id') : 0);\n\n$excludeAliases = array(\n    'test', 'пэдийуаи', 'бутуту', 'жлпижмцкломосывзщостэ', 'еуые',\n);\n\n$c = $modx->newQuery('modResource');\n$c->where(array('parent' => $parent, 'published' => 1, 'deleted' => 0));\n$c->sortby('publishedon', 'DESC');\n$c->sortby('id', 'DESC');\n$items = $modx->getCollection('modResource', $c);\n\n$esc = function ($s) { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); };\n\n$o  = '<div class=\"category-list\"><div><div class=\"content-category\">';\n$o .= '<h2>Лента новостей</h2>';\n$o .= '<table class=\"category table table-striped table-bordered table-hover\">';\n$o .= '<caption class=\"hide\">Список материалов в категории Лента новостей</caption>';\n$o .= '<thead><tr><th scope=\"col\" id=\"categorylist_header_title\">Заголовок</th></tr></thead><tbody>';\n$i = 0;\nforeach ($items as $it) {\n    $alias = mb_strtolower((string)$it->get('alias'), 'UTF-8');\n    if (in_array($alias, $excludeAliases, true)) continue;\n    $cls = 'cat-list-row' . ($i % 2);\n    $uri = $it->get('uri');\n    if ($uri === null || $uri === '') { $uri = 'blog/' . $it->get('alias'); }\n    $txt = $it->get('introtext');\n    if ($txt === null || trim($txt) === '') { $txt = $it->get('pagetitle'); }\n    $o .= '<tr class=\"' . $cls . '\"><td headers=\"categorylist_header_title\" class=\"list-title\">';\n    $o .= '<a href=\"/' . ltrim($uri, '/') . '\">' . $esc($txt) . '</a>';\n    $o .= '</td></tr>';\n    $i++;\n}\n$o .= '</tbody></table>';\n$o .= '</div></div></div>';\nreturn $o;",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "/**\n * newsList — \"Лента новостей\": all news on one page (no pagination).\n */\n$parent = isset($parent) ? (int)$parent : ($modx->resource ? (int)$modx->resource->get('id') : 0);\n\n$excludeAliases = array(\n    'test', 'пэдийуаи', 'бутуту', 'жлпижмцкломосывзщостэ', 'еуые',\n);\n\n$c = $modx->newQuery('modResource');\n$c->where(array('parent' => $parent, 'published' => 1, 'deleted' => 0));\n$c->sortby('publishedon', 'DESC');\n$c->sortby('id', 'DESC');\n$items = $modx->getCollection('modResource', $c);\n\n$esc = function ($s) { return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); };\n\n$o  = '<div class=\"category-list\"><div><div class=\"content-category\">';\n$o .= '<h2>Лента новостей</h2>';\n$o .= '<table class=\"category table table-striped table-bordered table-hover\">';\n$o .= '<caption class=\"hide\">Список материалов в категории Лента новостей</caption>';\n$o .= '<thead><tr><th scope=\"col\" id=\"categorylist_header_title\">Заголовок</th></tr></thead><tbody>';\n$i = 0;\nforeach ($items as $it) {\n    $alias = mb_strtolower((string)$it->get('alias'), 'UTF-8');\n    if (in_array($alias, $excludeAliases, true)) continue;\n    $cls = 'cat-list-row' . ($i % 2);\n    $uri = $it->get('uri');\n    if ($uri === null || $uri === '') { $uri = 'blog/' . $it->get('alias'); }\n    $txt = $it->get('introtext');\n    if ($txt === null || trim($txt) === '') { $txt = $it->get('pagetitle'); }\n    $o .= '<tr class=\"' . $cls . '\"><td headers=\"categorylist_header_title\" class=\"list-title\">';\n    $o .= '<a href=\"/' . ltrim($uri, '/') . '\">' . $esc($txt) . '</a>';\n    $o .= '</td></tr>';\n    $i++;\n}\n$o .= '</tbody></table>';\n$o .= '</div></div></div>';\nreturn $o;",
+  "data": "([])"
+}

@@ -1,0 +1,44 @@
+<title>[[*longtitle:notempty=`[[*longtitle]]`:default=`[[*pagetitle]]`]] - Кадровое агентство ТРИЗА-Спутник</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="работа в зеленограде, вакансии в зеленограде, работа зеленоград, вакансии зеленоград, кадровое агентство, подбор персонала, Зеленоград, Химки, Москва">
+<meta name="description" content="Работа и вакансии в Москве, Московской области, Зеленограде, Химках, Солнечногорске и других регионах России.">
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="/templates/jd_consult/css/font-awesome.min.css" rel="stylesheet">
+<link href="/templates/jd_consult/css/cookie-consent.css" rel="stylesheet">
+<link href="/templates/jd_consult/css/theme-modern.css" rel="stylesheet">
+<link href="/templates/jd_consult/css/responsive.css" rel="stylesheet">
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var KEY = 'tz-brand-spin-start';
+  var PERIOD = 8000;
+  var start;
+  try {
+    var stored = sessionStorage.getItem(KEY);
+    start = stored ? parseInt(stored, 10) : Date.now();
+    if (!stored) sessionStorage.setItem(KEY, String(start));
+  } catch (e) {
+    start = Date.now();
+  }
+
+  function tick() {
+    var angle = ((Date.now() - start) % PERIOD) / PERIOD * 360;
+    var rings = document.querySelectorAll('.tz-brand__ring');
+    for (var i = 0; i < rings.length; i++) {
+      rings[i].style.transform = 'rotate(' + angle + 'deg)';
+    }
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+})();
+</script>
+<script src="/media/jui/js/jquery.min.js" defer></script>
+<script src="/templates/jd_consult/js/cookie-consent.js" defer></script>
+<script src="/templates/jd_consult/js/theme-animations.js" defer></script>
+<script charset="UTF-8" src="//web.webpushs.com/js/push/7d165352ce369b26c03d174e13d0b11a_1.js" async></script>

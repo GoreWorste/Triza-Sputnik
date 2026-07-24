@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+       <field name="id" type="text" default="0" label="COM_CWHIRE_FORM_LBL_JOBLISTING_ID"
+	    readonly="true" class="readonly"
+	    description="JGLOBAL_FIELD_ID_DESC" />
+
+       <field name="name" type="text"
+
+            label="COM_CWHIRE_FORM_LBL_JOBLISTING_CATNAME"
+            description="COM_CWHIRE_FORM_DESC_JOBLISTING_CATNAME"
+                 required="true"
+            filter="raw" />
+
+			<field name="recipient" type="text"
+
+           label="COM_CWHIRE_FORM_LBL_JOBLISTING_CATMAIL"
+           description="COM_CWHIRE_FORM_DESC_JOBLISTING_CATMAIL"
+                required="false"
+           filter="raw" />
+		 <field
+ 			name="language"
+ 			type="contentlanguage"
+ 			label="JFIELD_LANGUAGE_LABEL"
+ 			description="COM_CONTACT_FIELD_LANGUAGE_DESC"
+ 			>
+	 			<option value="*">JALL</option>
+	 		</field>
+       <field name="created_by" type="createdby" default=""
+            label="COM_CWHIRE_FORM_LBL_JOBLISTING_CREATED_BY"
+            description="COM_CWHIRE_FORM_DESC_JOBLISTING_CREATED_BY"  />
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field>
+
+    <field name="checked_out" type="hidden" filter="unset" />
+    <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

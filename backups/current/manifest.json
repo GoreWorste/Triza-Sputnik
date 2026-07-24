@@ -1,0 +1,17 @@
+{
+  "site": "https://modx.romanovivv.ru",
+  "created_at": "2026-07-23T21:43:59",
+  "description": "Rollback point — restore with: python3 modxbuild/snapshot_restore.py",
+  "stats": {
+    "elements": 18,
+    "files": 6
+  },
+  "tracked_files": [
+    "templates/jd_consult/css/theme-modern.css",
+    "templates/jd_consult/css/responsive.css",
+    "templates/jd_consult/css/cookie-consent.css",
+    "templates/jd_consult/css/presets/preset1.css",
+    "templates/jd_consult/js/cookie-consent.js",
+    "templates/jd_consult/js/theme-animations.js"
+  ]
+}

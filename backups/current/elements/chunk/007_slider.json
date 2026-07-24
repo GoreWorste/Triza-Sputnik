@@ -1,0 +1,17 @@
+{
+  "id": 7,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "slider",
+  "description": "Chunk",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "<link href=\"/modules/mod_cw_fotorama/assets/css/fotorama.css\" rel=\"stylesheet\" type=\"text/css\" />\n<script src=\"/modules/mod_cw_fotorama/assets/js/fotorama.js\" type=\"text/javascript\"></script>\n<section id=\"sp-page-title\"><div class=\"row\"><div id=\"sp-title\" class=\"col-sm-12 col-md-12\"><div class=\"sp-column \"><div class=\"sp-module \"><div class=\"sp-module-content\"><script type=\"text/javascript\">\n(function($)\n{\n\t$(document).ready(function()\n\t{\n    $(function () {\n  \t\t$('.fotorama108').fotorama({\n        width: '100%',\nmaxheight: '450px',\nfit: 'cover',\nthumbfit: 'cover',\ntransitionduration: '800',\nloop: false,\nshuffle: false,\nkeyboard: false,\narrows: false,\nclick: false,\nswipe: false,\ntrackpad: false,\nallowfullscreen: false,\nautoplay: '5000',\nstopautoplayontouch: false,\nnav: 'false',\nnavposition: 'bottom',\ndirection: 'ltr',\ntransition: 'slide'\n\t\t\t});\n\t\t});\n  })\n})(jQuery);\n</script>\n  <div class=\"fotorama108\">\n    <img src=\"/images/slider/slide1.jpg\" class=\"nolazy\"><img src=\"/images/slider/slide3.jpg\" class=\"nolazy\"><img src=\"/images/slider/slide4.jpg\" class=\"nolazy\">  </div>\n\n</div></div></div></div></div></section>",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "content": "<link href=\"/modules/mod_cw_fotorama/assets/css/fotorama.css\" rel=\"stylesheet\" type=\"text/css\" />\n<script src=\"/modules/mod_cw_fotorama/assets/js/fotorama.js\" type=\"text/javascript\"></script>\n<section id=\"sp-page-title\"><div class=\"row\"><div id=\"sp-title\" class=\"col-sm-12 col-md-12\"><div class=\"sp-column \"><div class=\"sp-module \"><div class=\"sp-module-content\"><script type=\"text/javascript\">\n(function($)\n{\n\t$(document).ready(function()\n\t{\n    $(function () {\n  \t\t$('.fotorama108').fotorama({\n        width: '100%',\nmaxheight: '450px',\nfit: 'cover',\nthumbfit: 'cover',\ntransitionduration: '800',\nloop: false,\nshuffle: false,\nkeyboard: false,\narrows: false,\nclick: false,\nswipe: false,\ntrackpad: false,\nallowfullscreen: false,\nautoplay: '5000',\nstopautoplayontouch: false,\nnav: 'false',\nnavposition: 'bottom',\ndirection: 'ltr',\ntransition: 'slide'\n\t\t\t});\n\t\t});\n  })\n})(jQuery);\n</script>\n  <div class=\"fotorama108\">\n    <img src=\"/images/slider/slide1.jpg\" class=\"nolazy\"><img src=\"/images/slider/slide3.jpg\" class=\"nolazy\"><img src=\"/images/slider/slide4.jpg\" class=\"nolazy\">  </div>\n\n</div></div></div></div></div></section>",
+  "data": "([])"
+}

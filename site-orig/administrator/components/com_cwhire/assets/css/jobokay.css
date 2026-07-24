@@ -1,0 +1,17 @@
+.icon-48-joblistings {
+      background-image: url(../images/l_joblistings.png);
+      padding-left:60px!important;
+}
+
+.icon-48-joblisting {
+      background-image: url(../images/l_joblistings.png);
+      padding-left:60px!important;
+}
+
+.titlefield {
+      width: 600px;
+}
+
+.longtext {
+      width: 600px;
+}

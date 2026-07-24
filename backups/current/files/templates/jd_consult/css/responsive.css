@@ -1,0 +1,399 @@
+/* MODX site — responsive overrides for phone / tablet / desktop */
+
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* Logo */
+#sp-logo .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+#sp-logobar table {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+#sp-logobar table td {
+  width: auto !important;
+}
+
+#sp-logobar .logobar-soisk,
+#sp-logobar .logobar-rabot {
+  text-align: right;
+}
+
+/* Mobile contacts (logobar is hidden on xs) */
+#sp-mobile-contacts {
+  display: none;
+  padding: 12px 0;
+  border-bottom: 1px solid #e8e8e8;
+  background: #fafafa;
+}
+
+#sp-mobile-contacts .mobile-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#sp-mobile-contacts .mobile-contact-grid strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+#sp-mobile-contacts a {
+  color: #0285ca;
+}
+
+/* Header / hamburger */
+#sp-header .sp-megamenu-wrapper {
+  position: relative;
+}
+
+#offcanvas-toggler {
+  display: none;
+  float: right;
+  line-height: 50px;
+  font-size: 22px;
+  color: #333;
+  padding: 0 15px;
+  text-decoration: none;
+}
+
+#offcanvas-toggler:hover,
+#offcanvas-toggler:focus {
+  color: #0285ca;
+  text-decoration: none;
+}
+
+/* Main content */
+#sp-main-body,
+#sp-component .sp-column {
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+}
+
+#sp-main-body img,
+#sp-component img,
+.custom img {
+  max-width: 100%;
+  height: auto;
+}
+
+#sp-main-body table,
+.custom table {
+  max-width: 100%;
+}
+
+/* News table */
+.category.table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.category.table td.list-title a {
+  word-break: break-word;
+}
+
+/* Vacancy list */
+.itemlayer {
+  overflow-x: hidden;
+}
+
+.itemlist_title h3 {
+  word-break: break-word;
+}
+
+/* Hot vacancies — grid handled in theme-modern.css */
+.jobokay_latest_responsive .joboffer.col-sm-3 {
+  width: auto;
+  max-width: none;
+  flex: none;
+}
+
+/* Map */
+.map-responsive {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 62%;
+  height: 0;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+.tz-map__shield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+.contact_line {
+  word-break: break-word;
+}
+
+/* Modern theme — tablet */
+@media (max-width: 991px) {
+  .tz-contact-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tz-contact-card {
+    max-width: none;
+  }
+
+  .sp-megamenu-parent > li > a {
+    font-size: 12px !important;
+    padding: 8px 14px !important;
+  }
+}
+
+/* Modern theme — phone */
+@media (max-width: 767px) {
+  #sp-logo {
+    padding: 16px 0 12px;
+  }
+
+  #sp-logo .logo img {
+    max-height: 60px;
+  }
+
+  #sp-search {
+    padding: 24px 0;
+  }
+
+  #sp-search .sp-module-title {
+    font-size: 18px;
+  }
+
+  #jobokay_search_container #filter-bar {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  #jobokay_search_container #filter-bar .btn-group {
+    border-right: none !important;
+    border-bottom: 1px solid #e4e7ef !important;
+    flex: 1 1 auto;
+    width: 100% !important;
+  }
+
+  #jobokay_search_container #filter-bar .btn-group#jobokay_search_buttons {
+    width: 100% !important;
+    flex: 1 1 auto;
+  }
+
+  #sp-bottom .sp-module-title {
+    font-size: 22px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  #offcanvas-toggler {
+    display: inline-block !important;
+  }
+
+  #sp-menu .sp-column {
+    min-height: 50px;
+  }
+
+  body {
+    font-size: 17px !important;
+  }
+
+  .jobokay_latest_responsive {
+    gap: 16px;
+  }
+
+  .jobokay_latest_responsive .joboffer.col-sm-3 {
+    width: auto !important;
+    flex: none !important;
+  }
+}
+
+/* Phone */
+@media (max-width: 767px) {
+  #sp-mobile-contacts {
+    display: block;
+  }
+
+  #sp-logo {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  #sp-logo .logo img.visible-xs,
+  #sp-logo .logo img.sp-default-logo {
+    max-width: 240px;
+  }
+
+  body {
+    font-size: 16px !important;
+  }
+
+  h1,
+  #sp-page-title .sp-page-title h2 {
+    font-size: 22px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3,
+  .itemlist_title h3 {
+    font-size: 18px !important;
+  }
+
+  #sp-page-title .sp-page-title {
+    padding: 30px 15px !important;
+  }
+
+  #sp-page-title .sp-page-title h2,
+  #sp-page-title .sp-page-title .breadcrumb {
+    float: none !important;
+    text-align: left;
+  }
+
+  #sp-page-title:not(.tz-hero) .sp-module-content {
+    text-align: left !important;
+  }
+
+  #sp-page-title:not(.tz-hero) .breadcrumb,
+  ol.breadcrumb.tz-breadcrumb {
+    justify-content: flex-start !important;
+    font-size: 12px;
+  }
+
+  #sp-page-title:not(.tz-hero) .breadcrumb > li:not(:last-child)::after,
+  ol.breadcrumb.tz-breadcrumb > li:not(:last-child)::after {
+    margin: 0 7px;
+  }
+
+  #sp-bottom {
+    padding: 40px 0 !important;
+  }
+
+  #sp-footer1,
+  #sp-footer2 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #sp-footer ul.nav {
+    text-align: left;
+  }
+
+  .contact_line {
+    font-size: 14px;
+  }
+
+  .jobokay_latest_responsive {
+    gap: 14px;
+  }
+
+  .jobokay_latest_responsive .joboffer.col-sm-3 {
+    width: auto !important;
+    flex: none !important;
+    display: flex !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  .jobokay_latest_responsive li:last-child {
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  .offcanvas-menu {
+    width: 85%;
+    max-width: 320px;
+  }
+
+  #sp-mobile-contacts .mobile-contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  #sp-mobile-contacts .mobile-contact-grid > div {
+    background: #fff;
+    border: 1px solid #e4e7ef;
+    border-radius: 12px;
+    padding: 14px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px !important;
+  }
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  #jobokay_search_container #filter-bar .btn-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-right: 1px solid #b8b8b8 !important;
+    margin-bottom: 0;
+  }
+
+  #jobokay_search_container #filter-bar .btn-group#jobsearch_buttons {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #jobokay_search_container #filter-bar .btn-group select,
+  #jobokay_search_container #filter-bar .btn-group input#filter_search {
+    min-width: 0;
+  }
+}
+
+/* Desktop hot vacancies — grid in theme-modern.css */
+@media (min-width: 992px) {
+  .jobokay_latest_responsive .joboffer.col-sm-3 {
+    width: auto !important;
+    flex: none !important;
+  }
+}

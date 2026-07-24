@@ -1,0 +1,17 @@
+{
+  "id": 4,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "mapBlock",
+  "description": "Chunk",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "<section id=\"sp-full-width\"><div class=\"container\"><div class=\"row\"><div id=\"sp-fullwidth\" class=\"col-sm-12 col-md-12\"><div class=\"sp-column \"><div class=\"sp-module \"><h2 class=\"map-name\">Как добраться</h2><div class=\"sp-module-content\">\n\n<div class=\"custom\">\n<div class=\"map-responsive tz-map\">\n<button type=\"button\" class=\"tz-map__shield\" aria-label=\"Активировать карту\">Нажмите, чтобы взаимодействовать с картой</button>\n<iframe src=\"https://yandex.ru/map-widget/v1/?ll=37.224084%2C55.998929&mode=whatshere&whatshere%5Bpoint%5D=37.223890%2C55.998915&whatshere%5Bzoom%5D=17&z=19.04\" frameborder=\"0\" allowfullscreen=\"true\" title=\"Карта проезда\"></iframe>\n</div>\n</div>\n</div></div></div></div></div></section>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "content": "<section id=\"sp-full-width\"><div class=\"container\"><div class=\"row\"><div id=\"sp-fullwidth\" class=\"col-sm-12 col-md-12\"><div class=\"sp-column \"><div class=\"sp-module \"><h2 class=\"map-name\">Как добраться</h2><div class=\"sp-module-content\">\n\n<div class=\"custom\">\n<div class=\"map-responsive tz-map\">\n<button type=\"button\" class=\"tz-map__shield\" aria-label=\"Активировать карту\">Нажмите, чтобы взаимодействовать с картой</button>\n<iframe src=\"https://yandex.ru/map-widget/v1/?ll=37.224084%2C55.998929&mode=whatshere&whatshere%5Bpoint%5D=37.223890%2C55.998915&whatshere%5Bzoom%5D=17&z=19.04\" frameborder=\"0\" allowfullscreen=\"true\" title=\"Карта проезда\"></iframe>\n</div>\n</div>\n</div></div></div></div></div></section>\n",
+  "data": "([])"
+}

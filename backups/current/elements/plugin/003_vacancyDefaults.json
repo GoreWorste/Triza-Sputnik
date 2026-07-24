@@ -1,0 +1,19 @@
+{
+  "id": 3,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "vacancyDefaults",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "plugincode": "/**\n * vacancyDefaults — plugin (OnBeforeDocFormSave): if a resource is created/saved\n * inside the \"Вакансии\" container (or its \"Архив\" folder), force the \"vacancy\"\n * template so the vacancy fields + detail rendering work without manual setup.\n */\nif (empty($resource)) return;\n$containerId = (int)$modx->findResource('vacancy');\nif (!$containerId) return;\n\n$parent = (int)$resource->get('parent');\n$isVac = ($parent === $containerId);\nif (!$isVac && $parent) {\n    $p = $modx->getObject('modResource', $parent);\n    if ($p && $p->get('alias') === 'arhiv' && (int)$p->get('parent') === $containerId) {\n        $isVac = true;\n    }\n}\nif ($isVac) {\n    $vtpl = $modx->getObject('modTemplate', ['templatename' => 'vacancy']);\n    if ($vtpl && (int)$resource->get('template') !== (int)$vtpl->get('id')) {\n        $resource->set('template', (int)$vtpl->get('id'));\n    }\n}",
+  "locked": false,
+  "properties": null,
+  "disabled": false,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "/**\n * vacancyDefaults — plugin (OnBeforeDocFormSave): if a resource is created/saved\n * inside the \"Вакансии\" container (or its \"Архив\" folder), force the \"vacancy\"\n * template so the vacancy fields + detail rendering work without manual setup.\n */\nif (empty($resource)) return;\n$containerId = (int)$modx->findResource('vacancy');\nif (!$containerId) return;\n\n$parent = (int)$resource->get('parent');\n$isVac = ($parent === $containerId);\nif (!$isVac && $parent) {\n    $p = $modx->getObject('modResource', $parent);\n    if ($p && $p->get('alias') === 'arhiv' && (int)$p->get('parent') === $containerId) {\n        $isVac = true;\n    }\n}\nif ($isVac) {\n    $vtpl = $modx->getObject('modTemplate', ['templatename' => 'vacancy']);\n    if ($vtpl && (int)$resource->get('template') !== (int)$vtpl->get('id')) {\n        $resource->set('template', (int)$vtpl->get('id'));\n    }\n}",
+  "data": "([])"
+}
