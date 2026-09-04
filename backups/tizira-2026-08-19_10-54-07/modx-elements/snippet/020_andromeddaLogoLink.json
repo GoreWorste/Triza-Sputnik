@@ -1,0 +1,18 @@
+{
+  "id": 20,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "andromeddaLogoLink",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "declare(strict_types=1);\n\nrequire_once MODX_CORE_PATH . 'components/andromedda/logo-mark.php';\n\n$siteUrl = (string)($modx->getOption('siteUrl') ?? $modx->getOption('site_url') ?? '/');\n$compact = !empty($scriptProperties['compact']);\n\nreturn andromedda_logo_link(rtrim($siteUrl, '/') . '/', $compact);",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "declare(strict_types=1);\n\nrequire_once MODX_CORE_PATH . 'components/andromedda/logo-mark.php';\n\n$siteUrl = (string)($modx->getOption('siteUrl') ?? $modx->getOption('site_url') ?? '/');\n$compact = !empty($scriptProperties['compact']);\n\nreturn andromedda_logo_link(rtrim($siteUrl, '/') . '/', $compact);",
+  "data": "([])"
+}

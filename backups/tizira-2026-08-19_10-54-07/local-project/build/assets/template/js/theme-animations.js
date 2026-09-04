@@ -1,0 +1,170 @@
+(function () {
+  'use strict';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+
+  function initCursor() {
+    return;
+  }
+
+  function initAmbient() {
+    return;
+  }
+
+  function initProgress() {
+    if (reduced) return;
+    var bar = document.createElement('div');
+    bar.className = 'tz-progress';
+    document.body.appendChild(bar);
+    var tick = false;
+    function upd() {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var dh = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (dh > 0 ? (st / dh) * 100 : 0) + '%';
+      tick = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!tick) { requestAnimationFrame(upd); tick = true; }
+    }, { passive: true });
+  }
+
+  function initHeader() {
+    var header = document.getElementById('tz-header');
+    if (!header) return;
+    var last = 0;
+    var tick = false;
+    function upd() {
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      header.classList.toggle('tz-header--scrolled', y > 30);
+      if (!reduced && y > 140) header.classList.toggle('tz-header--hidden', y > last && y > 220);
+      else header.classList.remove('tz-header--hidden');
+      last = y;
+      tick = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!tick) { requestAnimationFrame(upd); tick = true; }
+    }, { passive: true });
+  }
+
+  function initDrawer() {
+    var burger = document.getElementById('tz-burger');
+    var drawer = document.getElementById('tz-drawer');
+    var backdrop = document.getElementById('tz-drawer-backdrop');
+    var closeBtn = document.getElementById('tz-drawer-close');
+    if (!burger || !drawer) return;
+    function open() {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('tz-no-scroll');
+    }
+    function close() {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('tz-no-scroll');
+    }
+    burger.addEventListener('click', function () { drawer.classList.contains('is-open') ? close() : open(); });
+    if (backdrop) backdrop.addEventListener('click', close);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  }
+
+  function initReveal() {
+    var els = document.querySelectorAll('.tz-reveal');
+    if (reduced || !('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('is-visible');
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  function initMap() {
+    return;
+  }
+
+  function initSearchFocus() {
+    var bar = document.getElementById('filter-bar');
+    if (!bar) return;
+    bar.querySelectorAll('select, input').forEach(function (el) {
+      el.addEventListener('focus', function () { bar.classList.add('is-focused'); });
+      el.addEventListener('blur', function () {
+        setTimeout(function () { if (!bar.querySelector(':focus')) bar.classList.remove('is-focused'); }, 80);
+      });
+    });
+  }
+
+  function initTotop() {
+    var btn = document.getElementById('tz-totop');
+    if (!btn) return;
+    function upd() {
+      btn.classList.toggle('is-visible', (window.pageYOffset || document.documentElement.scrollTop) > 400);
+    }
+    window.addEventListener('scroll', upd, { passive: true });
+    upd();
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+    });
+  }
+
+  function initLanding() {
+    var hero = document.getElementById('tz-hero');
+    if (!hero || !hero.classList.contains('tz-hero--landing')) return;
+
+    document.documentElement.classList.add('tz-home');
+    document.body.classList.add('tz-home');
+
+    var hint = document.getElementById('tz-scroll-hint');
+    var target = document.getElementById('tz-main-content');
+
+    if (hint && target) {
+      hint.addEventListener('click', function (e) {
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: top,
+          behavior: reduced ? 'auto' : 'smooth'
+        });
+      });
+    }
+
+    var tick = false;
+    window.addEventListener('scroll', function () {
+      if (!tick) {
+        requestAnimationFrame(function () {
+          var y = window.pageYOffset || document.documentElement.scrollTop;
+          if (hint) hint.classList.toggle('is-hidden', y > 80);
+          tick = false;
+        });
+        tick = true;
+      }
+    }, { passive: true });
+  }
+
+  ready(function () {
+    initAmbient();
+    initCursor();
+    initProgress();
+    initHeader();
+    initDrawer();
+    initLanding();
+    initReveal();
+    initMap();
+    initSearchFocus();
+    initTotop();
+    document.body.classList.add('tz-ready');
+  });
+})();

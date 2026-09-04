@@ -1,17 +1,35 @@
 #!/usr/bin/env python3
 """Deploy theme assets and MODX elements to modx.romanovivv.ru."""
 import json
+import os
 import re
 import subprocess
 import sys
 from pathlib import Path
 
-SITE = "https://modx.romanovivv.ru"
-USER = "admin"
-PASS = "AdmJQuGcTd04AX9"
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def load_env() -> None:
+    for name in (".env", ".env.example"):
+        path = ROOT / name
+        if not path.is_file():
+            continue
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip())
+
+
+load_env()
+
+SITE = os.environ.get("MODX_SITE", "https://modx.romanovivv.ru")
+USER = os.environ.get("MODX_ADMIN_USER", "admin")
+PASS = os.environ.get("MODX_ADMIN_PASS", "AdmJQuGcTd04AX9")
 COOKIE = "/tmp/tizira_modx.txt"
 MGR_HTML = "/tmp/tizira_mgr.html"
-ROOT = Path(__file__).resolve().parent.parent
 ELEMENTS = ROOT / "modxbuild/elements"
 
 CHUNKS = {
@@ -39,6 +57,7 @@ SNIPPETS = {
     10: "pageProse",
     11: "trainingsContent",
     12: "contactsContent",
+    13: "staffingForm",
 }
 
 TEMPLATES = {
@@ -57,10 +76,26 @@ FILES = [
     ("assets/about/about-content.html", ROOT / "modxbuild/assets/about/about-content.html"),
     ("assets/trainings/trainings-content.html", ROOT / "modxbuild/assets/trainings/trainings-content.html"),
     ("assets/contacts/contacts-content.html", ROOT / "modxbuild/assets/contacts/contacts-content.html"),
+    ("assets/home/home-content.html", ROOT / "modxbuild/assets/home/home-content.html"),
+    ("assets/services/rekrutment.html", ROOT / "modxbuild/assets/services/rekrutment.html"),
+    ("assets/services/regionalnyy-podbor.html", ROOT / "modxbuild/assets/services/regionalnyy-podbor.html"),
+    ("assets/services/autstaffing.html", ROOT / "modxbuild/assets/services/autstaffing.html"),
+    ("assets/services/executive-search.html", ROOT / "modxbuild/assets/services/executive-search.html"),
+    ("assets/services/khedkhanting.html", ROOT / "modxbuild/assets/services/khedkhanting.html"),
+    ("assets/services/domashnij-personal.html", ROOT / "modxbuild/assets/services/domashnij-personal.html"),
+    ("assets/services/zapros-na-podbor-personala.html", ROOT / "modxbuild/assets/services/zapros-na-podbor-personala.html"),
+]
+
+DIRS = [
+    "assets/home/",
+    "assets/services/",
+    "assets/about/",
 ]
 
 
 def run(cmd, check=True):
+    if cmd and cmd[0] == "curl" and "--max-time" not in cmd:
+        cmd = cmd[:1] + ["--max-time", "120", "--connect-timeout", "30"] + cmd[1:]
     return subprocess.run(cmd, check=check, capture_output=True, text=True)
 
 
@@ -83,23 +118,36 @@ def api(token, data=None, files=None):
 
 
 def login():
-    run([
-        "curl", "-sL", "-c", COOKIE,
-        "-X", "POST", f"{SITE}/manager/",
-        "-d", f"login_context=mgr&username={USER}&password={PASS}&rememberme=1&login=1",
-        "-o", MGR_HTML,
-    ])
-    html = Path(MGR_HTML).read_text(encoding="utf-8", errors="ignore")
-    m = re.search(r"HTTP_MODAUTH=([^\"]+)", html)
-    if not m or "Dashboard" not in html:
-        raise RuntimeError("MODX login failed")
-    return m.group(1)
+    users = []
+    if USER and PASS:
+        users.append((USER, PASS))
+    u2, p2 = os.environ.get("MODX_ADMIN2_USER", ""), os.environ.get("MODX_ADMIN2_PASS", "")
+    if u2 and p2 and (u2, p2) not in users:
+        users.append((u2, p2))
+    for user, password in users:
+        run([
+            "curl", "-sL", "-c", COOKIE,
+            "-X", "POST", f"{SITE}/manager/",
+            "-d", f"login_context=mgr&username={user}&password={password}&rememberme=1&login=1",
+            "-o", MGR_HTML,
+        ])
+        html = Path(MGR_HTML).read_text(encoding="utf-8", errors="ignore")
+        m = re.search(r"HTTP_MODAUTH=([^\"]+)", html)
+        if m and "Dashboard" in html:
+            print(f"logged in as {user}")
+            return m.group(1)
+    raise RuntimeError("MODX login failed")
 
 
 def read_php(path):
     s = path.read_text(encoding="utf-8")
     s = re.sub(r"^\s*<\?php\s*", "", s, count=1)
     s = re.sub(r"\?>\s*$", "", s)
+    if path.name == "staffingForm.snippet.php":
+        site_key = os.environ.get("RECAPTCHA_SITE_KEY", "")
+        secret_key = os.environ.get("RECAPTCHA_SECRET_KEY", "")
+        s = s.replace("{{RECAPTCHA_SITE_KEY}}", site_key)
+        s = s.replace("{{RECAPTCHA_SECRET_KEY}}", secret_key)
     return s
 
 
@@ -133,14 +181,31 @@ def upsert_snippet(token, snippet_id, name):
         "id": str(snippet_id),
         "name": name,
         "snippet": body,
+        "locked": "0",
     })
     if resp.get("success"):
         print(f"snippet {name} updated")
         return
+    # fallback: find by name
+    for sid in range(1, 40):
+        got = api(token, {"action": "element/snippet/get", "id": str(sid)})
+        if got.get("success") and (got.get("object") or {}).get("name") == name:
+            resp = api(token, {
+                "action": "element/snippet/update",
+                "id": str(sid),
+                "name": name,
+                "snippet": body,
+                "locked": "0",
+            })
+            if resp.get("success"):
+                print(f"snippet {name} updated (id={sid})")
+                return
+            break
     resp = api(token, {
         "action": "element/snippet/create",
         "name": name,
         "snippet": body,
+        "locked": "0",
     })
     if not resp.get("success"):
         raise RuntimeError(f"snippet {name}: {resp.get('message')}")
@@ -256,16 +321,42 @@ def main():
     upsert_plugin(token, "newsDefaults")
     assign_news_templates(token, tpl_ids["blog"], tpl_ids["news"])
 
-    for remote, local in FILES:
-        api(token, {"action": "browser/file/remove", "file": remote})
+    # ensure remote dirs exist for new content packs
+    for folder in ("assets/home/", "assets/services/", "assets/about/partners/", "assets/about/partners/color/"):
+        parent = str(Path(folder).parent)
+        if parent and not parent.endswith("/"):
+            parent += "/"
+        api(token, {"action": "browser/directory/create", "parent": parent, "name": Path(folder).name})
+
+    partner_files = sorted(
+        p for p in (ROOT / "modxbuild/assets/about/partners").rglob("*")
+        if p.is_file() and not p.name.startswith(".") and "_extracted" not in p.parts
+    )
+    upload_files = list(FILES)
+    for partner in partner_files:
+        rel = partner.relative_to(ROOT / "modxbuild/assets/about/partners")
+        upload_files.append((f"assets/about/partners/{rel.as_posix()}", partner))
+
+    for remote, local in upload_files:
+        run([
+            "curl", "-sL", "--max-time", "60", "--connect-timeout", "20",
+            "-b", COOKIE, "-H", f"modAuth: {token}", "-X", "POST", f"{SITE}/connectors/index.php",
+            "--data-urlencode", "action=browser/file/remove",
+            "--data-urlencode", f"file={remote}",
+        ], check=False)
+        # upload with original filename expected by remote path
+        upload_name = Path(remote).name
+        tmp = Path("/tmp") / upload_name
+        tmp.write_bytes(Path(local).read_bytes())
         resp = api(token, {
             "action": "browser/file/upload",
             "path": str(Path(remote).parent) + "/",
-        }, files={"file": str(local)})
+        }, files={"file": str(tmp)})
         if not resp.get("success"):
             raise RuntimeError(f"upload {remote}: {resp.get('message')}")
         print(f"uploaded {remote}")
 
+    api(token, {"action": "system/clearcache"})
     print("deploy complete")
 
 

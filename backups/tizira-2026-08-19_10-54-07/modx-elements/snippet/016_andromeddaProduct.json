@@ -1,0 +1,18 @@
+{
+  "id": 16,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "andromeddaProduct",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "/**\n * snippetProduct — карточка товара (полный перенос из Next.js)\n */\nrequire_once MODX_CORE_PATH . 'components/andromedda/product-page.php';\n\n$alias = $modx->resource->get('alias');\n$data = Andromedda::loadCatalog();\n$product = null;\n\nforeach ($data['products'] ?? [] as $item) {\n    if ($item['slug'] === $alias) {\n        $product = $item;\n        break;\n    }\n}\n\nif (!$product) {\n    return '<div class=\"container-page py-16\"><p class=\"text-muted\">Позиция не найдена.</p></div>';\n}\n\nreturn andromedda_render_product($modx, $product);",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "/**\n * snippetProduct — карточка товара (полный перенос из Next.js)\n */\nrequire_once MODX_CORE_PATH . 'components/andromedda/product-page.php';\n\n$alias = $modx->resource->get('alias');\n$data = Andromedda::loadCatalog();\n$product = null;\n\nforeach ($data['products'] ?? [] as $item) {\n    if ($item['slug'] === $alias) {\n        $product = $item;\n        break;\n    }\n}\n\nif (!$product) {\n    return '<div class=\"container-page py-16\"><p class=\"text-muted\">Позиция не найдена.</p></div>';\n}\n\nreturn andromedda_render_product($modx, $product);",
+  "data": "([])"
+}

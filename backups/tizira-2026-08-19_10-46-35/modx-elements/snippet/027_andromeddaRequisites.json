@@ -1,0 +1,18 @@
+{
+  "id": 27,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "andromeddaRequisites",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "require_once MODX_CORE_PATH . 'components/andromedda/content-pages.php';\nreturn andromedda_render_requisites($modx);",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "require_once MODX_CORE_PATH . 'components/andromedda/content-pages.php';\nreturn andromedda_render_requisites($modx);",
+  "data": "([])"
+}

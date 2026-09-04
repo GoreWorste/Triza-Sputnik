@@ -1,0 +1,18 @@
+{
+  "id": 11,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "trainingsContent",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "/**\n * trainingsContent — hub page for trainings section.\n */\n$file = MODX_BASE_PATH . 'assets/trainings/trainings-content.html';\nif (is_readable($file)) {\n    return file_get_contents($file);\n}\nreturn '<p>Раздел тренингов и вебинаров скоро будет обновлён. Свяжитесь с нами по телефону <a href=\"tel:+74957407888\">8 (495) 740-78-88</a>.</p>';",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "/**\n * trainingsContent — hub page for trainings section.\n */\n$file = MODX_BASE_PATH . 'assets/trainings/trainings-content.html';\nif (is_readable($file)) {\n    return file_get_contents($file);\n}\nreturn '<p>Раздел тренингов и вебинаров скоро будет обновлён. Свяжитесь с нами по телефону <a href=\"tel:+74957407888\">8 (495) 740-78-88</a>.</p>';",
+  "data": "([])"
+}

@@ -1,0 +1,17 @@
+{
+  "id": 9,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "pageFooterBands",
+  "description": "Chunk",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "[[$mapBlock]]\n<section class=\"tz-band tz-band--hot\" id=\"tz-hot-vacancies\">\n<div class=\"tz-wrap\">\n<div class=\"tz-band__head\">\n<div>\n<span class=\"tz-label\">Live feed</span>\n<h2 class=\"tz-band__title\">Горячие вакансии</h2>\n</div>\n<a href=\"/vacancy\" class=\"tz-link-arrow\">Все позиции <i class=\"fa fa-arrow-right\"></i></a>\n</div>\n[[!hotVacancies]]\n</div>\n</section>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "content": "[[$mapBlock]]\n<section class=\"tz-band tz-band--hot\" id=\"tz-hot-vacancies\">\n<div class=\"tz-wrap\">\n<div class=\"tz-band__head\">\n<div>\n<span class=\"tz-label\">Live feed</span>\n<h2 class=\"tz-band__title\">Горячие вакансии</h2>\n</div>\n<a href=\"/vacancy\" class=\"tz-link-arrow\">Все позиции <i class=\"fa fa-arrow-right\"></i></a>\n</div>\n[[!hotVacancies]]\n</div>\n</section>\n",
+  "data": "([])"
+}

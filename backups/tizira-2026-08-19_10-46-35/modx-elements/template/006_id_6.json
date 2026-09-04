@@ -1,0 +1,18 @@
+{
+  "id": 6,
+  "source": 0,
+  "property_preprocess": false,
+  "templatename": "Andromedda Base",
+  "description": "Andromedda theme",
+  "editor_type": 0,
+  "category": 0,
+  "icon": "",
+  "template_type": 0,
+  "content": "<!DOCTYPE html>\n<html lang=\"ru\" data-scroll-behavior=\"smooth\" class=\"h-full antialiased\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <title>[[*longtitle:default=`[[*pagetitle]]`]] — Andromedda</title>\n  <meta name=\"description\" content=\"[[*description:default=`Завод-производитель деревянных паллет и поддонов в Москве`]]\" />\n  <link rel=\"icon\" href=\"/assets/favicon-32.png\" sizes=\"32x32\" type=\"image/png\" />\n  <link rel=\"apple-touch-icon\" href=\"/assets/images/brand/icon-192.png\" />\n  <link rel=\"manifest\" href=\"/assets/site.webmanifest\" />\n  <meta name=\"theme-color\" content=\"#ffffff\" />\n  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />\n  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />\n  <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap\" rel=\"stylesheet\" />\n  <link rel=\"stylesheet\" href=\"/assets/components/andromedda/css/site.css\" />\n  <link rel=\"stylesheet\" href=\"/assets/components/andromedda/css/extras.css\" />\n  <base href=\"[[++site_url]]\" />\n</head>\n<body class=\"flex min-h-full flex-col bg-paper-0 text-ink-900\">\n  <div id=\"scroll-progress\" aria-hidden=\"true\"></div>\n  [[$tplHeader]]\n  <main class=\"flex-1\">[[*content]]</main>\n  [[$tplFooter]]\n  [[$tplCallModal]]\n  <script src=\"/assets/components/andromedda/js/site.js\" defer></script>\n</body>\n</html>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "preview_file": "",
+  "data": "([])"
+}

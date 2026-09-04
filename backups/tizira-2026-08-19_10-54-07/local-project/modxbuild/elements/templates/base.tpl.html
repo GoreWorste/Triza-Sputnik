@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+[[$head]]
+</head>
+<body class="tz-body tz-orbit [[*cssClass]] [[!newsPageType:notempty=`tz-[[!newsPageType]]-page`]]">
+<div class="tz-cursor" id="tz-cursor" aria-hidden="true"></div>
+<div class="tz-app">
+[[$topbarLogo]]
+<main class="tz-main" id="tz-main">
+[[!pageTitle]]
+<div id="tz-main-content" class="tz-landing-main">
+<div class="tz-stage">
+[[*show_search:is=`1`:then=`<div class="tz-bridge">[[$searchBar]]</div>`:else=``]]
+<div class="tz-sheet">
+<article class="tz-content">
+<div class="tz-content__inner" id="system-message-container"></div>
+<div class="tz-content__inner tz-prose">
+[[!pageProse]]
+</div>
+</article>
+[[$pageFooterBands]]
+</div>
+</div>
+</div>
+</main>
+[[$footer]]
+[[$copyright]]
+</div>
+[[$tail]]
+</body>
+</html>

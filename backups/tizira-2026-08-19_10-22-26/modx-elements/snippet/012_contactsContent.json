@@ -1,0 +1,18 @@
+{
+  "id": 12,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "contactsContent",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "/**\n * contactsContent — contacts page body (file override).\n */\n$r = $modx->resource;\nif (!$r || $r->get('alias') !== 'contacts') return '';\n\n$file = MODX_BASE_PATH . 'assets/contacts/contacts-content.html';\nif (is_readable($file)) {\n    return file_get_contents($file);\n}\n\nreturn (string)$r->get('content');",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "/**\n * contactsContent — contacts page body (file override).\n */\n$r = $modx->resource;\nif (!$r || $r->get('alias') !== 'contacts') return '';\n\n$file = MODX_BASE_PATH . 'assets/contacts/contacts-content.html';\nif (is_readable($file)) {\n    return file_get_contents($file);\n}\n\nreturn (string)$r->get('content');",
+  "data": "([])"
+}

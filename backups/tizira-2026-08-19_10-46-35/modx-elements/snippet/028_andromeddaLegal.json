@@ -1,0 +1,18 @@
+{
+  "id": 28,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "andromeddaLegal",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "require_once MODX_CORE_PATH . 'components/andromedda/legal-pages.php';\nreturn andromedda_render_legal($modx);",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "require_once MODX_CORE_PATH . 'components/andromedda/legal-pages.php';\nreturn andromedda_render_legal($modx);",
+  "data": "([])"
+}

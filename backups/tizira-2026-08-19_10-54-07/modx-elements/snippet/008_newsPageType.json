@@ -1,0 +1,18 @@
+{
+  "id": 8,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "newsPageType",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "/**\n * newsPageType — blog | article | (empty)\n */\n$blogId = (int)$modx->findResource('blog');\nif (!$blogId || !$modx->resource) return '';\n\n$id = (int)$modx->resource->get('id');\n$parent = (int)$modx->resource->get('parent');\n\nif ($id === $blogId) return 'blog';\nif ($parent === $blogId) return 'article';\nreturn '';",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "/**\n * newsPageType — blog | article | (empty)\n */\n$blogId = (int)$modx->findResource('blog');\nif (!$blogId || !$modx->resource) return '';\n\n$id = (int)$modx->resource->get('id');\n$parent = (int)$modx->resource->get('parent');\n\nif ($id === $blogId) return 'blog';\nif ($parent === $blogId) return 'article';\nreturn '';",
+  "data": "([])"
+}

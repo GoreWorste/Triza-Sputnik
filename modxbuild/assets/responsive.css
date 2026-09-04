@@ -100,7 +100,7 @@
   }
 
   .tz-hero--landing .tz-hero__body {
-    padding-top: calc(var(--tz-header-offset) + 20px);
+    padding-top: calc(var(--tz-header-offset, 72px) + 20px);
   }
 
   .tz-pagehead {
@@ -253,7 +253,7 @@
 
   .tz-hero--landing .tz-hero__body {
     padding:
-      calc(var(--tz-header-offset) + 16px)
+      calc(var(--tz-header-offset, 72px) + 16px)
       16px
       clamp(96px, 14vh, 120px);
     min-height: 100dvh;

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" data-no-defer="1" data-no-minify="1" data-no-optimize="1">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=i.length;r<a;r++)ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"))}for(var n=document.querySelectorAll("video"),r=0,a=n.length;r<a;r++)ewwwAttr(n[r],"poster",e?n[r].getAttribute("data-poster-webp"):n[r].getAttribute("data-poster-image"));for(var o,l=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=l.length;r<a;r++)e&&(ewwwAttr(l[r],"data-lazy-srcset",l[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(l[r],"data-srcset",l[r].getAttribute("data-srcset-webp")),ewwwAttr(l[r],"data-lazy-src",l[r].getAttribute("data-lazy-src-webp")),ewwwAttr(l[r],"data-src",l[r].getAttribute("data-src-webp")),ewwwAttr(l[r],"data-orig-file",l[r].getAttribute("data-webp-orig-file")),ewwwAttr(l[r],"data-medium-file",l[r].getAttribute("data-webp-medium-file")),ewwwAttr(l[r],"data-large-file",l[r].getAttribute("data-webp-large-file")),null!=(o=l[r].getAttribute("srcset"))&&!1!==o&&o.includes("R0lGOD")&&ewwwAttr(l[r],"src",l[r].getAttribute("data-lazy-src-webp"))),l[r].className=l[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var s=document.querySelectorAll(".ewww_webp"),r=0,a=s.length;r<a;r++)e?(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-webp")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-webp")),ewwwAttr(s[r],"data-orig-file",s[r].getAttribute("data-webp-orig-file")),ewwwAttr(s[r],"data-medium-file",s[r].getAttribute("data-webp-medium-file")),ewwwAttr(s[r],"data-large-file",s[r].getAttribute("data-webp-large-file")),ewwwAttr(s[r],"data-large_image",s[r].getAttribute("data-webp-large_image")),ewwwAttr(s[r],"data-src",s[r].getAttribute("data-webp-src"))):(ewwwAttr(s[r],"srcset",s[r].getAttribute("data-srcset-img")),ewwwAttr(s[r],"src",s[r].getAttribute("data-src-img"))),s[r].className=s[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<title>Download MODX 3 Revolution</title>
+	<meta name="description" content="Download the latest version of the open source content management system MODX." />
+	<link rel="canonical" href="https://modx3.com/download/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:locale:alternate" content="ru_RU" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Download MODX 3 Revolution" />
+	<meta property="og:description" content="Download the latest version of the open source content management system MODX." />
+	<meta property="og:url" content="https://modx3.com/download/" />
+	<meta property="og:site_name" content="MODX 3" />
+	<meta property="article:modified_time" content="2026-02-22T10:28:24+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/modx3.com\/download\/","url":"https:\/\/modx3.com\/download\/","name":"Download MODX 3 Revolution","isPartOf":{"@id":"https:\/\/modx3.com\/en\/#website"},"datePublished":"2022-01-20T10:23:31+00:00","dateModified":"2026-02-22T10:28:24+00:00","description":"Download the latest version of the open source content management system MODX.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/modx3.com\/download\/"]}]},{"@type":"WebSite","@id":"https:\/\/modx3.com\/en\/#website","url":"https:\/\/modx3.com\/en\/","name":"MODX 3","description":"Detailed Russian-language documentation for MODX 3","publisher":{"@id":"https:\/\/modx3.com\/en\/#\/schema\/person\/0e5b16521a698f519eaca71b24e34c59"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/modx3.com\/en\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":"https:\/\/modx3.com\/en\/#\/schema\/person\/0e5b16521a698f519eaca71b24e34c59","name":"Alex87","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/secure.gravatar.com\/avatar\/8aaf650340698021f8b450c76d58a9e1159dd600c564210c07af2465ae75d1d2?s=96&d=mm&r=g","url":"https:\/\/secure.gravatar.com\/avatar\/8aaf650340698021f8b450c76d58a9e1159dd600c564210c07af2465ae75d1d2?s=96&d=mm&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/8aaf650340698021f8b450c76d58a9e1159dd600c564210c07af2465ae75d1d2?s=96&d=mm&r=g","caption":"Alex87"},"logo":{"@id":"https:\/\/secure.gravatar.com\/avatar\/8aaf650340698021f8b450c76d58a9e1159dd600c564210c07af2465ae75d1d2?s=96&d=mm&r=g"}}]}</script>
+
+
+<link rel="alternate" href="https://modx3.com/skachat/" hreflang="ru" />
+<link rel="alternate" href="https://modx3.com/download/" hreflang="en" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-normal-font-size{font-size: var(--wp--preset--font-size--normal) !important;}.has-huge-font-size{font-size: var(--wp--preset--font-size--huge) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='dae-download-css' href='https://modx3.com/wp-content/plugins/download-after-email/css/download.css?ver=a4f91469779a' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://modx3.com/wp-includes/css/dashicons.min.css?ver=28d14b47338f' media='all' />
+<link rel='stylesheet' id='dae-fa-css' href='https://modx3.com/wp-content/plugins/download-after-email/css/all.css?ver=28d14b47338f' media='all' />
+<link rel='stylesheet' id='fontawesome-css' href='https://modx3.com/wp-content/plugins/subscribe-to-download-lite/fontawesome/css/all.min.css?ver=198068b3cdca' media='all' />
+<link rel='stylesheet' id='stdl-frontend-style-css' href='https://modx3.com/wp-content/plugins/subscribe-to-download-lite//css/stdl-frontend.css?ver=198068b3cdca' media='all' />
+<link rel='stylesheet' id='expert-review-style-css' href='https://modx3.com/wp-content/plugins/expert-review/assets/public/css/styles.min.css?ver=39b92f951614' media='all' />
+<link rel='stylesheet' id='google-fonts-css' href='https://fonts.googleapis.com/css?family=Montserrat%3A400%2C400i%2C700&#038;subset=cyrillic&#038;display=swap&#038;ver=28d14b47338f' media='all' />
+<link rel='stylesheet' id='reboot-style-css' href='https://modx3.com/wp-content/themes/reboot/assets/css/style.min.css?ver=51a3950c5050' media='all' />
+<link rel='stylesheet' id='reboot-style-child-css' href='https://modx3.com/wp-content/themes/reboot_child/style.css?ver=28d14b47338f' media='all' />
+<script id="jquery-core-js" src="https://modx3.com/wp-includes/js/jquery/jquery.min.js?ver=8a0c4faa9771"></script>
+<script id="stdl-frontend-script-js-extra">
+var stdl_frontend_obj = {"ajax_url":"https://modx3.com/wp-admin/admin-ajax.php","ajax_nonce":"d41ebfc4ed"};
+//# sourceURL=stdl-frontend-script-js-extra
+</script>
+<script id="stdl-frontend-script-js" src="https://modx3.com/wp-content/plugins/subscribe-to-download-lite//js/stdl-frontend.js?ver=198068b3cdca"></script>
+<style>.pseudo-clearfy-link{color:#0058cf;cursor:pointer;text-decoration:none;}.pseudo-clearfy-link:hover{color:#2900cf;text-decoration:none;}</style>    <link rel="apple-touch-icon" sizes="180x180" href="https://modx.com/templates/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://modx.com/templates/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://modx.com/templates/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="https://modx.com/templates/img/icons/site.webmanifest">
+    <link rel="mask-icon" href="https://modx.com/templates/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://modx.com/templates/img/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="https://modx.com/templates/img/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff"><link rel="preload" href="https://modx3.com/wp-content/themes/reboot/assets/fonts/wpshop-core.ttf" as="font" crossorigin><noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><link rel="icon" href="https://modx3.com/wp-content/uploads/cropped-modx-logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://modx3.com/wp-content/uploads/cropped-modx-logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://modx3.com/wp-content/uploads/cropped-modx-logo-180x180.png" />
+<meta name="msapplication-TileImage" content="https://modx3.com/wp-content/uploads/cropped-modx-logo-270x270.png" />
+<style>.clearfy-cookie { position:fixed; left:0; right:0; bottom:0; padding:12px; color:#555555; background:#ffffff; box-shadow:0 3px 20px -5px rgba(41, 44, 56, 0.2); z-index:9999; font-size: 13px; border-radius: 12px; transition: .3s; }.clearfy-cookie--left { left: 20px; bottom: 20px; right: auto; max-width: 400px; margin-right: 20px; }.clearfy-cookie--right { left: auto; bottom: 20px; right: 20px; max-width: 400px; margin-left: 20px; }.clearfy-cookie.clearfy-cookie-hide { transform: translateY(150%) translateZ(0); opacity: 0; }.clearfy-cookie-container { max-width:1170px; margin:0 auto; text-align:center; }.clearfy-cookie-accept { background:#4b81e8; color:#fff; border:0; padding:.2em .8em; margin: 0 0 0 .5em; font-size: 13px; border-radius: 4px; cursor: pointer; }.clearfy-cookie-accept:hover,.clearfy-cookie-accept:focus { opacity: .9; }</style>    </head>
+
+<body class="wp-singular page-template-default page page-id-630 wp-embed-responsive wp-theme-reboot wp-child-theme-reboot_child sidebar-none">
+
+
+
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content"><!--noindex-->Skip to content<!--/noindex--></a>
+
+    <div class="search-screen-overlay js-search-screen-overlay"></div>
+    <div class="search-screen js-search-screen">
+        
+<form role="search" method="get" class="search-form" action="https://modx3.com/en/">
+    <label>
+        <span class="screen-reader-text"><!--noindex-->Search for:<!--/noindex--></span>
+        <input type="search" class="search-field" placeholder="Search…" value="" name="s">
+    </label>
+    <button type="submit" class="search-submit"></button>
+</form>    </div>
+
+    
+
+<header id="masthead" class="site-header full" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="site-header-inner fixed">
+
+        <div class="humburger js-humburger"><span></span><span></span><span></span></div>
+
+        
+<div class="site-branding">
+
+    <div class="site-logotype"><a href="https://modx3.com/en/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAAAiAQAAAACyj5zEAAAAAnRSTlMAAHaTzTgAAAAPSURBVCjPY2AYBaOAtgAAAmQAAdvshY4AAAAASUVORK5CYII=" width="134" height="34" alt="MODX 3" data-src="https://modx3.com/wp-content/uploads/logo.png" decoding="async" class="lazyload ewww_webp_lazy_load" data-eio-rwidth="134" data-eio-rheight="34" data-src-webp="https://modx3.com/wp-content/uploads/logo.png.webp"><noscript><img src="https://modx3.com/wp-content/uploads/logo.png" width="134" height="34" alt="MODX 3" data-eio="l"></noscript></a></div></div><!-- .site-branding --><div class="top-menu"><ul id="top-menu" class="menu"><li id="menu-item-976" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-976"><a href="https://modx3.com/about/">About</a></li>
+<li id="menu-item-978" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-978"><a href="https://modx3.com/documentation/">Documentation</a></li>
+<li id="menu-item-977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-977"><a href="https://modx3.com/contacts/">Contacts</a></li>
+<li id="menu-item-979" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-630 current_page_item menu-item-979"><span class="removed-link">Download MODX 3</span></li>
+<li id="menu-item-980" class="pll-parent-menu-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-980"><a href="#pll_switcher"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;" /></a>
+<ul class="sub-menu">
+	<li id="menu-item-980-ru" class="lang-item lang-item-12 lang-item-ru lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-980-ru"><a href="https://modx3.com/skachat/" lang="ru-RU" hreflang="ru-RU"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAdVBMVEX19f/u7vjm5/H+/v75+fng4Ove3ulFRfyysv6cnP6QkPmIiPh/f/YAAOYAAP1ycv5QUP06OvkxMfcoKPcgIPYUFPS0AADdaYzTRG/RPGnOM2LKLFzIIVPCEUZ7AAD0AQH7YGH3ODj0JyfzERDgAAD4TU3pAABIfLuPAAAAT0lEQVR4AQXBAQqDMAAAsZytyHzA/v9LYRS7JIAQMkBb0ATsgLoKInnHvIrHrdRaBzxupTDxuFUifUsp4R3zU4iwzmOyT1ibBtP2u3C+wB+SHBB5JNY7DAAAAABJRU5ErkJggg==" alt="Русский" width="16" height="11" style="width: 16px; height: 11px;" /></a></li>
+</ul>
+</li>
+</ul></div>                <div class="header-search">
+                    <span class="search-icon js-search-icon"></span>
+                </div>
+            
+    </div>
+</header><!-- #masthead -->
+
+
+
+    
+    
+    <nav id="site-navigation" class="main-navigation fixed" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <div class="main-navigation-inner full">
+            <div class="menu-osnovnaya-navigatsiya-en-container"><ul id="header_menu" class="menu"><li id="menu-item-970" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-970"><a href="https://modx3.com/getting-started/">Getting Started</a></li>
+<li id="menu-item-971" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-971"><a href="https://modx3.com/for-developers/">For developers</a></li>
+<li id="menu-item-972" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-972"><a href="https://modx3.com/website-development/">Website development</a></li>
+<li id="menu-item-973" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-973"><a href="https://modx3.com/practice/">Practice</a></li>
+<li id="menu-item-975" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-975"><a href="https://modx3.com/seo-en/">Internal SEO optimization</a></li>
+<li id="menu-item-974" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-974"><a href="https://modx3.com/extras/">Extras</a></li>
+</ul></div>        </div>
+    </nav><!-- #site-navigation -->
+
+    
+
+    <div class="mobile-menu-placeholder js-mobile-menu-placeholder"></div>
+    
+	
+    <div id="content" class="site-content fixed">
+
+        
+        <div class="site-content-inner">
+    
+        
+        <div id="primary" class="content-area" itemscope itemtype="http://schema.org/Article">
+            <main id="main" class="site-main">
+
+                
+<article id="post-630" class="article-post post-630 page type-page status-publish ">
+
+    
+        
+                                <h1 class="entry-title" itemprop="headline">Download MODX 3</h1>
+                    
+        
+        
+    
+	<div class="entry-content" itemprop="articleBody">
+		<p>Download the latest version of the open source content management system MODX.</p>
+<h2>Current Version: 3.2.0-pl (rel. 17-Feb-2026)</h2>
+<span class="pseudo-link js-link" data-href="aHR0cHM6Ly9naXRodWIuY29tL21vZHhjbXMvcmV2b2x1dGlvbi9ibG9iL3YzLjIuMC1wbC9jb3JlL2RvY3MvY2hhbmdlbG9nLnR4dA==" data-target="_blank" rel="noopener">Changelog</span>
+<div class="table-responsive">
+<table class="table">
+<tbody>
+<tr>
+<td>
+<p class="lead font-weight-bold m-0"><strong>Traditional Installation Package</strong></p>
+<p>To install this software, follow the <a href="https://modx3.com/install/" target="_blank" rel="noopener">basic installation guide</a>.</td>
+<td><a class="btn btn-lg btn-block btn-primary mt-3 float-md-end" href="https://modx3.com/distr/modx-3.2.0-pl.zip">Download (23,4 MB)</a></td>
+</tr>
+<tr>
+<td>
+<p class="lead font-weight-bold m-0"><strong>Advanced Installation Package</strong></p>
+<p>These packages are slightly less than half the size of the &#8220;Regular&#8221; downloads, since the &#8220;core&#8221; contents are compressed. MODX Setup will try to unpack or &#8220;build&#8221; this package during install. It&#8217;s recommended you only use this if you plan to move the core, manager or connectors directories, and you have SSH access and are familiar with making folders writable.</td>
+<td><a class="btn btn-lg btn-block btn-primary mt-3 float-md-end" href="https://modx3.com/distr/modx-3.2.0-pl-advanced.zip">Download (14,9 МБ)</a></td>
+</tr>
+<tr>
+<td>
+<p class="lead font-weight-bold m-0"><strong>SDK Installation Package</strong></p>
+<p>Includes the MODX Revolution build assets, ExtJS debug files, and additional features for MODX Extras developers.</td>
+<td><a class="btn btn-lg btn-block btn-primary mt-3 float-md-end" href="https://modx3.com/distr/modx-3.2.0-pl-sdk.zip">Download (24,7 МБ)</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Server Requirements Overview</h3>
+<p>The guidelines below are the minimal and recommended versions of software to run MODX Revolution.</p>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Component</th>
+<th>Minimum Required</th>
+<th>Recommended for Production</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PHP</td>
+<td>8.1</td>
+<td><strong>8.1+</strong></td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Latest MySQL 5.6.x</td>
+<td><strong>MariaDB 10.1.x or Percona Server 5.6.x or above</strong></td>
+</tr>
+<tr>
+<td>Web Server</td>
+<td>Latest Apache 2.2.x</td>
+<td><strong>Latest NGINX 1.18.x or above</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="mt-3">Previous issues</h2>
+<h3>3.1.2-pl (Release date: April 2, 2025<span style="font-size: 16px;">)</span></h3>
+<p><a href="https://modx3.com/distr/modx-3.1.2-pl.zip" target="_blank" rel="noopener">modx-3.1.2-pl</a> (23,1 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.1.2-pl-advanced.zip" target="_blank" rel="noopener">modx-3.1.2-pl-advanced</a> (14,7 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.1.2-pl-sdk.zip" target="_blank" rel="noopener">modx-3.1.2-pl-sdk</a> (24,4 мб)</p>
+<h3>3.1.1 (Release date: February 18, 2025)</h3>
+<p><a href="https://modx3.com/distr/modx-3.1.1-pl.zip">modx-3.1.1-pl</a> (23 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.1.1-pl-advanced.zip">modx-3.1.1-pl-advanced</a> (14,6 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.1.1-pl-sdk.zip">modx-3.1.1-pl-sdk</a> (24,3 мб)</p>
+<h3>3.1.0 (Release date: December 18, 2024)</h3>
+<p><a href="https://modx3.com/distr/modx-3.1.0-pl.zip">modx-3.1.0-pl</a> (23 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.1.0-pl-advanced.zip">modx-3.1.0-pl-advanced</a> (14,6 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.1.0-pl-sdk.zip">modx-3.1.0-pl-sdk</a> (24,3 мб)</p>
+<h3>3.0.6-pl (Release date: December 9, 2024)</h3>
+<p><a href="https://modx3.com/distr/modx-3.0.6-pl.zip" target="_blank" rel="noopener">modx-3.0.6-pl</a> (22,9 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.6-pl-advanced.zip" target="_blank" rel="noopener">modx-3.0.6-pl-advanced</a> (14,5 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.6-pl-sdk.zip" target="_blank" rel="noopener">modx-3.0.6-pl-sdk</a> (24,1 мб)</p>
+<h3>3.0.5-pl (Release date: April 10, 2024)</h3>
+<p><a href="https://modx3.com/distr/modx-3.0.5-pl.zip" target="_blank" rel="noopener">modx-3.0.5-pl</a> (22,8 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.5-pl-advanced.zip" target="_blank" rel="noopener">modx-3.0.5-pl-advanced</a> (14,5 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.5-pl-sdk.zip" target="_blank" rel="noopener">modx-3.0.5-pl-sdk</a> (24,1 мб)</p>
+<h3>3.0.4-pl (Release date: October 3, 2023)</h3>
+<p><a href="https://modx3.com/distr/modx-3.0.4-pl.zip" target="_blank" rel="noopener">modx-3.0.4-pl</a> (22,8 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.4-pl-advanced.zip" target="_blank" rel="noopener">modx-3.0.4-pl-advanced</a> (14,4 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.4-pl-sdk.zip" target="_blank" rel="noopener">modx-3.0.4-pl-sdk</a> (24,1 мб)</p>
+<h3>3.0.3-pl (Release date: January 17, 2023)</h3>
+<p><a href="https://modx3.com/distr/modx-3.0.3-pl.zip" target="_blank" rel="noopener">modx-3.0.3-pl</a> (26,2 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.3-pl-advanced.zip" target="_blank" rel="noopener">modx-3.0.3-pl-advanced</a> (17,8 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.3-pl-sdk.zip" target="_blank" rel="noopener">modx-3.0.3-pl-sdk</a> (27,5 мб)</p>
+<h3>3.0.2-pl (Release date: November 16, 2022)</h3>
+<p><a href="https://modx3.com/distr/modx-3.0.2-pl.zip" target="_blank" rel="noopener">modx-3.0.2-pl</a> (25,7 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.2-pl-advanced.zip" target="_blank" rel="noopener">modx-3.0.2-pl-advanced</a> (17,4 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.2-pl-sdk.zip" target="_blank" rel="noopener">modx-3.0.2-pl-sdk</a> (27 мб)</p>
+<h3>3.0.1-pl (Release date: April 28, 2022)</h3>
+<p><a href="https://modx3.com/distr/modx-3.0.1-pl.zip" target="_blank" rel="noopener">modx-3.0.1-pl</a> (25,4 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.1-pl-advanced.zip" target="_blank" rel="noopener">modx-3.0.1-pl-advanced</a> (17 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.1-pl-sdk.zip" target="_blank" rel="noopener">modx-3.0.1-pl-sdk</a> (26,6 мб)</p>
+<h3>3.0.0-pl (Release date: March 30, 2022)</h3>
+<p><a href="https://modx3.com/distr/modx-3.0.0-pl.zip" target="_blank" rel="noopener">modx-3.0.0-pl</a> (25,2 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.0-pl-advanced.zip" target="_blank" rel="noopener">modx-3.0.0-pl-advanced</a> (16,9 мб)</p>
+<p><a href="https://modx3.com/distr/modx-3.0.0-pl-sdk.zip" target="_blank" rel="noopener">modx-3.0.0-pl-sdk</a> (26,5 мб)</p>
+	</div><!-- .entry-content -->
+
+</article>
+
+
+    <div class="entry-social">
+                    <div class="entry-bottom__header">Share to friends</div>
+        
+                <div class="social-buttons"><span class="social-button social-button--vkontakte" data-social="vkontakte" data-image=""></span><span class="social-button social-button--facebook" data-social="facebook"></span><span class="social-button social-button--telegram" data-social="telegram"></span><span class="social-button social-button--odnoklassniki" data-social="odnoklassniki"></span><span class="social-button social-button--twitter" data-social="twitter"></span><span class="social-button social-button--sms" data-social="sms"></span><span class="social-button social-button--whatsapp" data-social="whatsapp"></span></div>            </div>
+
+
+
+<meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://modx3.com/download/" content="Download MODX 3">
+<meta itemprop="dateModified" content="2026-02-22">
+<meta itemprop="datePublished" content="2022-01-20T13:23:31+03:00">
+<meta itemprop="author" content="Alex87">
+<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;"><div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAAAiAQAAAACyj5zEAAAAAnRSTlMAAHaTzTgAAAAPSURBVCjPY2AYBaOAtgAAAmQAAdvshY4AAAAASUVORK5CYII=" alt="MODX 3" data-src="https://modx3.com/wp-content/uploads/logo.png" decoding="async" class="lazyload ewww_webp_lazy_load" width="134" height="34" data-eio-rwidth="134" data-eio-rheight="34" data-src-webp="https://modx3.com/wp-content/uploads/logo.png.webp"><noscript><img itemprop="url image" src="https://modx3.com/wp-content/uploads/logo.png" alt="MODX 3" data-eio="l"></noscript></div><meta itemprop="name" content="MODX 3"><meta itemprop="telephone" content="MODX 3"><meta itemprop="address" content="https://modx3.com/en"></div>
+            </main><!-- #main -->
+        </div><!-- #primary -->
+
+        
+    
+    
+
+</div><!--.site-content-inner-->
+
+
+</div><!--.site-content-->
+
+
+
+
+
+<div class="site-footer-container ">
+
+    
+
+    <footer id="colophon" class="site-footer site-footer--style-gray full">
+        <div class="site-footer-inner fixed">
+
+            
+            
+<div class="footer-bottom">
+    <div class="footer-info">
+        © 2026 MODX 3
+	        </div>
+
+    </div>
+        </div>
+    </footer><!--.site-footer-->
+</div>
+
+
+    <button type="button" class="scrolltop js-scrolltop"></button>
+
+</div><!-- #page -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/reboot_child/*","/wp-content/themes/reboot/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script>(function(){var cls="pseudo-clearfy-link";function decodeUri(value){if(!value){return"";}if(/^https?:\/\//i.test(value)){return value;}try{return atob(value);}catch(e){return value;}}var links=document.querySelectorAll("."+cls);for(var i=0;i<links.length;i++){links[i].addEventListener("click",function(e){var el=e.currentTarget;var url=decodeUri(el.getAttribute("data-uri"));if(!url){return;}var target=el.getAttribute("data-target");if(target==="_blank"){window.open(url,"_blank");return;}window.location.href=url;});}})();</script><!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(99658427, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/99658427" style="position:absolute; left:-9999px;" alt="метрика" /></div></noscript> <!-- /Yandex.Metrika counter --><script>document.addEventListener("copy", (event) => {var pagelink = "\nИсточник: https://modx3.com/download";event.clipboardData.setData("text", document.getSelection() + pagelink);event.preventDefault();});</script><script id="eio-lazy-load-js-before">
+var eio_lazy_vars = {"bg_min_dpr":1.100000000000000088817841970012523233890533447265625,"exactdn_domain":"","safe_domains":["modx3.com","www.modx3.com"],"skip_autoscale":0,"threshold":0,"use_dpr":1};
+//# sourceURL=eio-lazy-load-js-before
+</script>
+<script async data-wp-strategy="async" id="eio-lazy-load-js" src="https://modx3.com/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=51ef186e18dc"></script>
+<script id="dae-media-query-js" src="https://modx3.com/wp-content/plugins/download-after-email/js/media-query.js?ver=a4f91469779a"></script>
+<script id="dae-download-js-extra">
+var objDaeDownload = {"ajaxUrl":"https://modx3.com/wp-admin/admin-ajax.php","nonce":"5fc4ffb98f"};
+//# sourceURL=dae-download-js-extra
+</script>
+<script id="dae-download-js" src="https://modx3.com/wp-content/plugins/download-after-email/js/download.js?ver=a4f91469779a"></script>
+<script id="expert-review-scripts-js-extra">
+var expert_review_ajax = {"url":"https://modx3.com/wp-admin/admin-ajax.php","nonce":"1b7526a726","comment_to_scroll_selector":"","ask_question_link_new_tab":"0","i18n":{"question_popup_name":"Name","question_popup_email":"Email","question_popup_phone":"Phone","question_popup_question":"Question","question_popup_submit":"Submit","question_popup_cancel":"Cancel","question_submitted":"Your question was successfully submitted","legacy_form":"Require to update custom form generation","field_cannot_be_empty":"Field cannot be empty","field_must_be_checked":"Field must be checked","consent":"Consent to the processing of personal data"},"consent":"1"};
+//# sourceURL=expert-review-scripts-js-extra
+</script>
+<script id="expert-review-scripts-js" src="https://modx3.com/wp-content/plugins/expert-review/assets/public/js/scripts.min.js?ver=39b92f951614"></script>
+<script id="reboot-scripts-js-extra">
+var settings_array = {"rating_text_average":"average","rating_text_from":"from","lightbox_display":"1","sidebar_fixed":"1"};
+var wps_ajax = {"url":"https://modx3.com/wp-admin/admin-ajax.php","nonce":"1b7526a726"};
+//# sourceURL=reboot-scripts-js-extra
+</script>
+<script id="reboot-scripts-js" src="https://modx3.com/wp-content/themes/reboot/assets/js/scripts.min.js?ver=51a3950c5050"></script>
+<div id="clearfy-cookie" class="clearfy-cookie clearfy-cookie-hide clearfy-cookie--bottom">  <div class="clearfy-cookie-container">   Этот веб-сайт использует файлы cookie для улучшения пользовательского опыта. Продолжая использовать сайт, вы соглашаетесь на использование файлов cookie.   <button id="clearfy-cookie-accept" class="clearfy-cookie-accept">OK</button>  </div></div><script>var cookie_clearfy_hide = document.cookie.replace(/(?:(?:^|.*;\s*)clearfy_cookie_hide\s*\=\s*([^;]*).*$)|^.*$/, "$1");if ( ! cookie_clearfy_hide.length ) {  document.getElementById("clearfy-cookie").classList.remove("clearfy-cookie-hide");} document.getElementById("clearfy-cookie-accept").onclick = function() { document.getElementById("clearfy-cookie").className += " clearfy-cookie-hide"; var clearfy_cookie_date = new Date(new Date().getTime() + 31536000 * 1000); document.cookie = "clearfy_cookie_hide=yes; path=/; expires=" + clearfy_cookie_date.toUTCString(); setTimeout(function() { document.getElementById("clearfy-cookie").parentNode.removeChild( document.getElementById("clearfy-cookie") ); }, 300);}</script>
+
+
+</body>
+</html>

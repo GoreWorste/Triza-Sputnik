@@ -1,0 +1,18 @@
+{
+  "id": 19,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "andromeddaYear",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "return date('Y');",
+  "locked": false,
+  "properties": null,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "return date('Y');",
+  "data": "([])"
+}

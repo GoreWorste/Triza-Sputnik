@@ -1,0 +1,17 @@
+{
+  "id": 3,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "footer",
+  "description": "Chunk",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "<footer class=\"tz-footer\" id=\"tz-footer\">\n<div class=\"tz-wrap tz-footer__grid\">\n<div class=\"tz-footer__brand\">\n<div class=\"tz-brand tz-brand--footer\">\n<span class=\"tz-brand__ring\" aria-hidden=\"true\"><span class=\"tz-brand__dot\"></span></span>\n<span class=\"tz-brand__word\"><span class=\"tz-brand__main\">СПУТНИК</span><span class=\"tz-brand__sep\">·</span><span class=\"tz-brand__sub\">Персонал</span></span>\n</div>\n<p>Кадровое агентство для работодателей. Подбор персонала в Москве, Зеленограде, Московской области и регионах с 1992 года.</p>\n</div>\n<div class=\"tz-footer__col\">\n<h4>Контакты</h4>\n<p>г. Москва, Зеленоград, ул. Юности, д. 8, оф. 814</p>\n<p><a href=\"tel:+74957407888\">8 (495) 740-78-88</a> — работодатели</p>\n<p><a href=\"tel:+79637112724\">8 (963) 711-27-24</a></p>\n<p><a href=\"mailto:sputnik.personal@yandex.ru\">sputnik.personal@yandex.ru</a></p>\n</div>\n<div class=\"tz-footer__col\">\n<h4>Услуги</h4>\n<ul>\n<li><a href=\"/rekrutment\">Рекрутмент</a></li>\n<li><a href=\"/executive-search\">Executive Search</a></li>\n<li><a href=\"/autstaffing\">Аутстаффинг</a></li>\n<li><a href=\"/domashnij-personal\">Домашний персонал</a></li>\n<li><a href=\"/zapros-na-podbor-personala\">Заказать подбор</a></li>\n<li><a href=\"/contacts\">Контакты</a></li>\n</ul>\n</div>\n<div class=\"tz-footer__col\">\n<h4>Документы</h4>\n<ul>\n<li><a href=\"/politika-obrabotki-personalnykh-dannykh-polzovatelej-sajta\">Политика конфиденциальности</a></li>\n<li><a href=\"/soglashenie-ob-okazanii-uslug-po-ispolzovaniyu-sajta\">Соглашение об использовании</a></li>\n</ul>\n</div>\n</div>\n</footer>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "content": "<footer class=\"tz-footer\" id=\"tz-footer\">\n<div class=\"tz-wrap tz-footer__grid\">\n<div class=\"tz-footer__brand\">\n<div class=\"tz-brand tz-brand--footer\">\n<span class=\"tz-brand__ring\" aria-hidden=\"true\"><span class=\"tz-brand__dot\"></span></span>\n<span class=\"tz-brand__word\"><span class=\"tz-brand__main\">СПУТНИК</span><span class=\"tz-brand__sep\">·</span><span class=\"tz-brand__sub\">Персонал</span></span>\n</div>\n<p>Кадровое агентство для работодателей. Подбор персонала в Москве, Зеленограде, Московской области и регионах с 1992 года.</p>\n</div>\n<div class=\"tz-footer__col\">\n<h4>Контакты</h4>\n<p>г. Москва, Зеленоград, ул. Юности, д. 8, оф. 814</p>\n<p><a href=\"tel:+74957407888\">8 (495) 740-78-88</a> — работодатели</p>\n<p><a href=\"tel:+79637112724\">8 (963) 711-27-24</a></p>\n<p><a href=\"mailto:sputnik.personal@yandex.ru\">sputnik.personal@yandex.ru</a></p>\n</div>\n<div class=\"tz-footer__col\">\n<h4>Услуги</h4>\n<ul>\n<li><a href=\"/rekrutment\">Рекрутмент</a></li>\n<li><a href=\"/executive-search\">Executive Search</a></li>\n<li><a href=\"/autstaffing\">Аутстаффинг</a></li>\n<li><a href=\"/domashnij-personal\">Домашний персонал</a></li>\n<li><a href=\"/zapros-na-podbor-personala\">Заказать подбор</a></li>\n<li><a href=\"/contacts\">Контакты</a></li>\n</ul>\n</div>\n<div class=\"tz-footer__col\">\n<h4>Документы</h4>\n<ul>\n<li><a href=\"/politika-obrabotki-personalnykh-dannykh-polzovatelej-sajta\">Политика конфиденциальности</a></li>\n<li><a href=\"/soglashenie-ob-okazanii-uslug-po-ispolzovaniyu-sajta\">Соглашение об использовании</a></li>\n</ul>\n</div>\n</div>\n</footer>\n",
+  "data": "([])"
+}

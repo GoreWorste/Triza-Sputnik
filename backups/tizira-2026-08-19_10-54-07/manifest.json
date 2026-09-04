@@ -1,0 +1,21 @@
+{
+  "site": "https://modx.romanovivv.ru",
+  "created_at": "2026-08-19T11:02:03",
+  "duration_sec": 476.7,
+  "stats": {
+    "files_total": 124,
+    "files_ok": 124,
+    "files_fail": 0,
+    "elements": 66,
+    "resources": 30,
+    "failed_paths": []
+  },
+  "contents": {
+    "server-files": "All site files from MODX file manager",
+    "modx-elements": "Chunks, snippets, templates, plugins, TVs (JSON)",
+    "modx-resources": "All MODX resources (JSON)",
+    "local-project": "Local theme/build sources from this repo",
+    "config": "MODX configuration files"
+  },
+  "restore_note": "For full DB restore use config/database credentials on the server and run mysqldump restore, or import modx-resources JSON via MODX manager."
+}

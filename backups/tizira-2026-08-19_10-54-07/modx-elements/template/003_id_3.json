@@ -1,0 +1,18 @@
+{
+  "id": 3,
+  "source": 0,
+  "property_preprocess": false,
+  "templatename": "vacancy",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "icon": "",
+  "template_type": 0,
+  "content": "<!DOCTYPE html>\n<html lang=\"ru\" dir=\"ltr\">\n<head>\n[[$head]]\n</head>\n<body class=\"tz-body tz-orbit tz-vacancy-page [[*cssClass]]\">\n<div class=\"tz-cursor\" id=\"tz-cursor\" aria-hidden=\"true\"></div>\n<div class=\"tz-app\">\n[[$topbarLogo]]\n<main class=\"tz-main\" id=\"tz-main\">\n[[!pageTitle]]\n<div id=\"tz-main-content\" class=\"tz-landing-main\">\n<div class=\"tz-stage\">\n<div class=\"tz-sheet tz-sheet--vacancy\">\n<div class=\"tz-vacancy-detail\">\n[[!jobDetail]]\n</div>\n[[$pageFooterBands]]\n</div>\n</div>\n</div>\n</main>\n[[$footer]]\n[[$copyright]]\n</div>\n[[$tail]]\n</body>\n</html>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "preview_file": "",
+  "data": "([])"
+}

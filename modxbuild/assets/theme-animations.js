@@ -39,13 +39,19 @@
     var tick = false;
 
     function syncHeaderOffset() {
-      if (window.innerWidth > 991) {
-        document.documentElement.style.removeProperty('--tz-header-offset');
-        return;
-      }
+      var landing = document.querySelector('.tz-hero--landing');
       var h = header.offsetHeight;
       if (h > 0) {
-        document.documentElement.style.setProperty('--tz-header-offset', h + 'px');
+        if (landing) {
+          document.documentElement.style.setProperty('--tz-landing-header', h + 'px');
+          document.documentElement.style.setProperty('--tz-header-offset', h + 'px');
+        } else if (window.innerWidth <= 991) {
+          document.documentElement.style.setProperty('--tz-header-offset', h + 'px');
+          document.documentElement.style.removeProperty('--tz-landing-header');
+        } else {
+          document.documentElement.style.removeProperty('--tz-header-offset');
+          document.documentElement.style.removeProperty('--tz-landing-header');
+        }
       }
     }
 
@@ -188,6 +194,61 @@
     });
   }
 
+  function initStaffingForm() {
+    var forms = document.querySelectorAll('.tz-staff-form__form');
+    if (!forms.length) return;
+
+    forms.forEach(function (form) {
+      var siteKey = form.getAttribute('data-recaptcha-site-key');
+      if (!siteKey) return;
+
+      form.addEventListener('submit', function (e) {
+        if (form.dataset.tzRecaptchaReady === '1') {
+          form.dataset.tzRecaptchaReady = '';
+          return;
+        }
+        e.preventDefault();
+        var tokenField = form.querySelector('input[name="g-recaptcha-response"]');
+        if (!tokenField) {
+          form.submit();
+          return;
+        }
+
+        function run() {
+          window.grecaptcha.ready(function () {
+            window.grecaptcha.execute(siteKey, { action: 'staffing_form' }).then(function (token) {
+              tokenField.value = token;
+              form.dataset.tzRecaptchaReady = '1';
+              if (typeof form.requestSubmit === 'function') form.requestSubmit();
+              else form.submit();
+            }).catch(function () {
+              form.dataset.tzRecaptchaReady = '1';
+              if (typeof form.requestSubmit === 'function') form.requestSubmit();
+              else form.submit();
+            });
+          });
+        }
+
+        if (window.grecaptcha && window.grecaptcha.execute) run();
+        else {
+          var tries = 0;
+          var timer = setInterval(function () {
+            tries += 1;
+            if (window.grecaptcha && window.grecaptcha.execute) {
+              clearInterval(timer);
+              run();
+            } else if (tries > 40) {
+              clearInterval(timer);
+              form.dataset.tzRecaptchaReady = '1';
+              if (typeof form.requestSubmit === 'function') form.requestSubmit();
+              else form.submit();
+            }
+          }, 150);
+        }
+      });
+    });
+  }
+
   function initLanding() {
     var hero = document.getElementById('tz-hero');
     if (!hero || !hero.classList.contains('tz-hero--landing')) return;
@@ -230,6 +291,7 @@
     initMap();
     initSearchFocus();
     initTotop();
+    initStaffingForm();
     document.body.classList.add('tz-ready');
   });
 })();

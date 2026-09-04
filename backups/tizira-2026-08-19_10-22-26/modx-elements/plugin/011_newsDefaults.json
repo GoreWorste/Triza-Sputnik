@@ -1,0 +1,19 @@
+{
+  "id": 11,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "newsDefaults",
+  "description": "",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "plugincode": "/**\n * newsDefaults — plugin (OnBeforeDocFormSave): assign blog/news templates in manager.\n */\nif ($modx->event->name !== 'OnBeforeDocFormSave' || empty($resource)) return;\n\n$blogTpl = $modx->getObject('modTemplate', array('templatename' => 'blog'));\n$newsTpl = $modx->getObject('modTemplate', array('templatename' => 'news'));\nif (!$blogTpl || !$newsTpl) return;\n\n$blogId = (int)$modx->findResource('blog');\nif (!$blogId) return;\n\n$id = (int)$resource->get('id');\n$parent = (int)$resource->get('parent');\n$blogTplId = (int)$blogTpl->get('id');\n$newsTplId = (int)$newsTpl->get('id');\n\n$target = null;\nif ($id === $blogId || ($resource->get('alias') === 'blog' && $parent === 0)) {\n    $target = $blogTplId;\n} elseif ($parent === $blogId) {\n    $target = $newsTplId;\n}\n\nif ($target && (int)$resource->get('template') !== $target) {\n    $resource->set('template', $target);\n}",
+  "locked": false,
+  "properties": null,
+  "disabled": false,
+  "moduleguid": "",
+  "static": false,
+  "static_file": "",
+  "content": "/**\n * newsDefaults — plugin (OnBeforeDocFormSave): assign blog/news templates in manager.\n */\nif ($modx->event->name !== 'OnBeforeDocFormSave' || empty($resource)) return;\n\n$blogTpl = $modx->getObject('modTemplate', array('templatename' => 'blog'));\n$newsTpl = $modx->getObject('modTemplate', array('templatename' => 'news'));\nif (!$blogTpl || !$newsTpl) return;\n\n$blogId = (int)$modx->findResource('blog');\nif (!$blogId) return;\n\n$id = (int)$resource->get('id');\n$parent = (int)$resource->get('parent');\n$blogTplId = (int)$blogTpl->get('id');\n$newsTplId = (int)$newsTpl->get('id');\n\n$target = null;\nif ($id === $blogId || ($resource->get('alias') === 'blog' && $parent === 0)) {\n    $target = $blogTplId;\n} elseif ($parent === $blogId) {\n    $target = $newsTplId;\n}\n\nif ($target && (int)$resource->get('template') !== $target) {\n    $resource->set('template', $target);\n}",
+  "data": "([])"
+}

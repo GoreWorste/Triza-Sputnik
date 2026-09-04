@@ -1,0 +1,18 @@
+{
+  "id": 10,
+  "source": 0,
+  "property_preprocess": false,
+  "templatename": "Andromedda Legal",
+  "description": "Andromedda theme",
+  "editor_type": 0,
+  "category": 0,
+  "icon": "",
+  "template_type": 0,
+  "content": "[[!andromeddaLegal]]\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "preview_file": "",
+  "data": "([])"
+}

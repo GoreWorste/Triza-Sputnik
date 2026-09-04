@@ -1,0 +1,18 @@
+{
+  "id": 7,
+  "source": 0,
+  "property_preprocess": false,
+  "templatename": "Andromedda Page",
+  "description": "Andromedda theme",
+  "editor_type": 0,
+  "category": 0,
+  "icon": "",
+  "template_type": 0,
+  "content": "<section class=\"bg-paper-50 py-10 sm:py-12 md:py-16\">\n  <div class=\"container-page\">\n    <nav class=\"text-[12.5px] text-muted\" aria-label=\"Хлебные крошки\">\n      <a href=\"[[++site_url]]\">Главная</a> / <span class=\"text-ink-900\">[[*pagetitle]]</span>\n    </nav>\n    <h1 class=\"mt-6 text-[clamp(2rem,1.3rem+3vw,3.75rem)] font-extrabold leading-[1.05]\">[[*pagetitle]]</h1>\n    [[*intro:notempty=`<p class=\"mt-5 max-w-2xl text-[15px] leading-relaxed text-slate-ink\">[[*intro]]</p>`]]\n  </div>\n</section>\n<section class=\"py-12 md:py-16\">\n  <div class=\"container-page prose prose-slate max-w-3xl text-[15px] leading-relaxed\">\n    [[*content]]\n  </div>\n</section>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "preview_file": "",
+  "data": "([])"
+}

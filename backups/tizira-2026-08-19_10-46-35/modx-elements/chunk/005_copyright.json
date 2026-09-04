@@ -1,0 +1,17 @@
+{
+  "id": 5,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "copyright",
+  "description": "Chunk",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "<div class=\"tz-copy\">\n<div class=\"tz-wrap\">\n<p>СПУТНИК-Персонал © <script>document.write(new Date().getFullYear())</script>. Все права защищены.</p>\n</div>\n</div>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "content": "<div class=\"tz-copy\">\n<div class=\"tz-wrap\">\n<p>СПУТНИК-Персонал © <script>document.write(new Date().getFullYear())</script>. Все права защищены.</p>\n</div>\n</div>\n",
+  "data": "([])"
+}

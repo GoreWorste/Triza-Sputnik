@@ -1,0 +1,17 @@
+{
+  "id": 4,
+  "source": 0,
+  "property_preprocess": false,
+  "name": "mapBlock",
+  "description": "Chunk",
+  "editor_type": 0,
+  "category": 0,
+  "cache_type": 0,
+  "snippet": "<section class=\"tz-band tz-band--map\" id=\"tz-map-section\">\n<div class=\"tz-wrap\">\n<div class=\"tz-band__head tz-band__head--light\">\n<span class=\"tz-label\">Локация</span>\n<h2 class=\"tz-band__title tz-band__title--dark\">Как добраться</h2>\n<p class=\"tz-band__desc\">г. Москва, Зеленоград, ул. Юности, д. 8, оф. 814</p>\n</div>\n<div class=\"tz-map is-covered\">\n<div class=\"tz-map__frame\">\n<iframe data-src=\"https://yandex.ru/map-widget/v1/?ll=37.224084%2C55.998929&amp;mode=whatshere&amp;whatshere%5Bpoint%5D=37.223890%2C55.998915&amp;whatshere%5Bzoom%5D=17&amp;z=19.04\" title=\"Карта\" loading=\"lazy\"></iframe>\n<button type=\"button\" class=\"tz-map__cover\" aria-label=\"Показать карту\">\n<span class=\"tz-map__cover-icon\" aria-hidden=\"true\"><i class=\"fa fa-map-marker\"></i></span>\n<span class=\"tz-map__cover-title\">г. Москва, Зеленоград</span>\n<span class=\"tz-map__cover-addr\">ул. Юности, д. 8, оф. 814</span>\n<span class=\"tz-map__cover-btn\">Показать карту</span>\n</button>\n<button type=\"button\" class=\"tz-map__close\" aria-label=\"Скрыть карту\" hidden><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>\n</div>\n</div>\n</div>\n</section>\n",
+  "locked": false,
+  "properties": null,
+  "static": false,
+  "static_file": "",
+  "content": "<section class=\"tz-band tz-band--map\" id=\"tz-map-section\">\n<div class=\"tz-wrap\">\n<div class=\"tz-band__head tz-band__head--light\">\n<span class=\"tz-label\">Локация</span>\n<h2 class=\"tz-band__title tz-band__title--dark\">Как добраться</h2>\n<p class=\"tz-band__desc\">г. Москва, Зеленоград, ул. Юности, д. 8, оф. 814</p>\n</div>\n<div class=\"tz-map is-covered\">\n<div class=\"tz-map__frame\">\n<iframe data-src=\"https://yandex.ru/map-widget/v1/?ll=37.224084%2C55.998929&amp;mode=whatshere&amp;whatshere%5Bpoint%5D=37.223890%2C55.998915&amp;whatshere%5Bzoom%5D=17&amp;z=19.04\" title=\"Карта\" loading=\"lazy\"></iframe>\n<button type=\"button\" class=\"tz-map__cover\" aria-label=\"Показать карту\">\n<span class=\"tz-map__cover-icon\" aria-hidden=\"true\"><i class=\"fa fa-map-marker\"></i></span>\n<span class=\"tz-map__cover-title\">г. Москва, Зеленоград</span>\n<span class=\"tz-map__cover-addr\">ул. Юности, д. 8, оф. 814</span>\n<span class=\"tz-map__cover-btn\">Показать карту</span>\n</button>\n<button type=\"button\" class=\"tz-map__close\" aria-label=\"Скрыть карту\" hidden><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>\n</div>\n</div>\n</div>\n</section>\n",
+  "data": "([])"
+}

@@ -4,6 +4,12 @@ $title = '';
 if ($modx->resource) {
     $tv = $modx->resource->getTVValue('title_mode');
     if ($tv !== null && $tv !== '') $mode = $tv;
+    $rid = (int)$modx->resource->get('id');
+    $siteStart = (int)$modx->config['site_start'];
+    $alias = (string)$modx->resource->get('alias');
+    if ($rid === $siteStart || $alias === 'home') {
+        $mode = 'slider';
+    }
     $title = $modx->resource->get('pagetitle');
     $intro = $modx->resource->get('introtext');
     if ($intro !== null && trim($intro) !== '' && $modx->resource->get('parent')) {
